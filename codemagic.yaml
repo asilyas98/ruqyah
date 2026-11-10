@@ -5,7 +5,7 @@ workflows:
 
     environment:
       groups:
-        - appstore_credentials
+        - ruqyah
       # Codemagic handles automatic signing using your App Store Connect API key.
       # Set these 3 variables in Codemagic → App Settings → Environment variables:
       #   APP_STORE_CONNECT_ISSUER_ID     (from App Store Connect → Users → Keys)
