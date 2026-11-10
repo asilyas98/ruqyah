@@ -1,0 +1,51 @@
+workflows:
+  ios-app-store:
+    name: iOS App Store Release
+    max_build_duration: 60
+
+    environment:
+      groups:
+        - appstore_credentials
+      # Codemagic handles automatic signing using your App Store Connect API key.
+      # Set these 3 variables in Codemagic → App Settings → Environment variables:
+      #   APP_STORE_CONNECT_ISSUER_ID     (from App Store Connect → Users → Keys)
+      #   APP_STORE_CONNECT_KEY_IDENTIFIER (the Key ID)
+      #   APP_STORE_CONNECT_PRIVATE_KEY   (contents of the .p8 file — mark as secure)
+      #   CERTIFICATE_PRIVATE_KEY         (your iOS Distribution private key — mark as secure)
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.simpleai.ruqyah
+      xcode: latest
+      cocoapods: default
+
+    scripts:
+      - name: Set up code signing
+        script: xcode-project use-profiles
+
+      - name: Build IPA for App Store
+        script: |
+          xcode-project build-ipa \
+            --project "$CM_BUILD_DIR/Ruqyah.xcodeproj" \
+            --scheme Ruqyah \
+            --config Release
+
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+
+    publishing:
+      email:
+        recipients:
+          - asilyas98@gmail.com
+        notify:
+          success: true
+          failure: true
+      app_store_connect:
+        # Uses the same API key from environment variables above
+        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+        issuer_id: $APP_STORE_CONNECT_ISSUER_ID
+        # Submits to TestFlight first — you manually release to App Store from App Store Connect
+        submit_to_testflight: true
+        submit_to_app_store: true
+        release_type: MANUAL

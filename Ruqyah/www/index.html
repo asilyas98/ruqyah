@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ruqyah</title>
+  <meta name="description" content="A complete Ruqyah protection guide with morning & evening adhkar, step-by-step recitations, daily Sunnah lifestyle habits, and signs of ayn and sihr — with full Arabic text, transliterations, and authentic hadith sources.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap">
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --bg:        #EEF4FF;
+      --bg-alt:    #E2ECFB;
+      --surface:   #FFFFFF;
+      --border:    rgba(37,99,235,.11);
+      --text:      #1E2E4A;
+      --muted:     #4A6FA5;
+      --faint:     #7A9DC8;
+      --accent:    #2563EB;
+      --accent-lt: #3B82F6;
+      --accent-bg: rgba(37,99,235,.07);
+      --arabic:    #1E2E4A;
+      --tag-bg:    rgba(37,99,235,.09);
+      --tag-text:  #1D4ED8;
+      --green:     #0D6E3E;
+      --green-done:#16A34A;
+      --col-morn:  #D97706;
+      --col-ruq:   #2563EB;
+      --col-life:  #059669;
+      --col-sign:  #7C3AED;
+    }
+    @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+      --bg:#08101F; --bg-alt:#0D1828; --surface:#121E35;
+      --border:rgba(147,197,253,.10);
+      --text:#DEEEFF; --muted:#7FB3F5; --faint:#4A7EC5;
+      --accent:#60A5FA; --accent-lt:#93C5FD; --accent-bg:rgba(96,165,250,.10);
+      --arabic:#EBF4FF; --tag-bg:rgba(96,165,250,.12); --tag-text:#93C5FD;
+      --green:#065F46; --green-done:#34D399;
+      --col-morn:#FBBF24; --col-ruq:#60A5FA; --col-life:#34D399; --col-sign:#A78BFA;
+    }}
+    :root[data-theme="dark"]{
+      --bg:#08101F; --bg-alt:#0D1828; --surface:#121E35;
+      --border:rgba(147,197,253,.10);
+      --text:#DEEEFF; --muted:#7FB3F5; --faint:#4A7EC5;
+      --accent:#60A5FA; --accent-lt:#93C5FD; --accent-bg:rgba(96,165,250,.10);
+      --arabic:#EBF4FF; --tag-bg:rgba(96,165,250,.12); --tag-text:#93C5FD;
+      --green:#065F46; --green-done:#34D399;
+      --col-morn:#FBBF24; --col-ruq:#60A5FA; --col-life:#34D399; --col-sign:#A78BFA;
+    }
+    :root[data-theme="light"]{
+      --bg:#EEF4FF; --bg-alt:#E2ECFB; --surface:#FFFFFF;
+      --border:rgba(37,99,235,.11);
+      --text:#1E2E4A; --muted:#4A6FA5; --faint:#7A9DC8;
+      --accent:#2563EB; --accent-lt:#3B82F6; --accent-bg:rgba(37,99,235,.07);
+      --arabic:#1E2E4A; --tag-bg:rgba(37,99,235,.09); --tag-text:#1D4ED8;
+      --green:#0D6E3E; --green-done:#16A34A;
+      --col-morn:#D97706; --col-ruq:#2563EB; --col-life:#059669; --col-sign:#7C3AED;
+    }
+
+    /* ── RESET ── */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:15px;line-height:1.6}
+
+    /* ── HEADER ── */
+    .hdr{
+      position:sticky;top:env(safe-area-inset-top,0px);z-index:100;
+      background:var(--bg);border-bottom:1px solid var(--border);
+      padding:14px 20px 0;
+    }
+    .hdr-top{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
+    .hdr-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;font-weight:600;margin:0;letter-spacing:.01em}
+    .hdr-sub{font-size:.75rem;color:var(--faint);letter-spacing:.07em;text-transform:uppercase}
+
+    /* ── TABS ── */
+    .tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .tabs::-webkit-scrollbar{display:none}
+    .tab{flex-shrink:0;border:none;background:transparent;padding:8px 14px 11px;
+      font-family:'Inter',sans-serif;font-size:.82rem;font-weight:500;color:var(--muted);
+      cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s;white-space:nowrap}
+    .tab:hover{color:var(--text)}
+    .tab.on{color:var(--text);border-bottom-color:var(--accent)}
+
+    /* ── LAYOUT ── */
+    .wrap{max-width:680px;margin:0 auto;padding:0 20px 80px}
+    .panel{display:none}.panel.on{display:block}
+    .sec-head{padding:26px 0 18px;border-bottom:1px solid var(--border);margin-bottom:22px}
+    .sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.75rem;font-weight:600;margin:0 0 8px;text-wrap:balance;line-height:1.2}
+    .sec-desc{font-size:.88rem;color:var(--muted);margin:0;line-height:1.65}
+
+    /* ── TIME TOGGLE ── */
+    .toggle-row{display:flex;background:var(--bg-alt);border:1px solid var(--border);border-radius:8px;padding:3px;gap:2px;width:fit-content;margin-bottom:22px}
+    .tog{border:none;background:transparent;padding:7px 18px;font-family:'Inter',sans-serif;font-size:.83rem;font-weight:500;color:var(--muted);border-radius:6px;cursor:pointer;transition:background .15s,color .15s,box-shadow .15s}
+    .tog.on{background:var(--accent);color:#fff;box-shadow:0 1px 4px rgba(37,99,235,.35)}
+
+    /* ── DHIKR CARD ── */
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;margin-bottom:14px;transition:opacity .2s}
+    .card.done{opacity:.5}
+    .card-hdr{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:14px}
+    .card-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;font-weight:600}
+    .card-count{font-size:.73rem;font-weight:600;background:var(--tag-bg);color:var(--tag-text);padding:3px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+    .arabic{font-family:'Noto Naskh Arabic',serif;font-size:1.9rem;line-height:1.8;color:var(--arabic);text-align:right;direction:rtl;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:14px}
+    .arabic.sm{font-size:1.5rem}
+    .arabic.lg{font-size:2.1rem}
+    .translit{font-style:italic;font-size:.86rem;color:var(--muted);margin-bottom:10px;line-height:1.55}
+    .meaning{font-size:.9rem;color:var(--text);margin-bottom:12px;line-height:1.6}
+    .card-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+    .source{font-size:.73rem;color:var(--faint);font-style:italic;line-height:1.4}
+    .chk{border:none;background:var(--green);color:#fff;font-family:'Inter',sans-serif;font-size:.77rem;font-weight:600;padding:6px 14px;border-radius:20px;cursor:pointer;transition:background .15s;display:flex;align-items:center;gap:4px;flex-shrink:0}
+    .chk:hover{filter:brightness(1.1)}
+    .chk.on{background:var(--green-done)}
+
+    /* ── HADITH BLOCK ── */
+    .hadith{background:var(--accent-bg);border-left:3px solid var(--accent);padding:16px 20px;border-radius:0 10px 10px 0;margin:0 0 22px}
+    .hadith .arabic{border:none;padding:0 0 10px;margin:0}
+    .hadith-en{font-size:.88rem;color:var(--text);font-style:italic;line-height:1.55;margin-bottom:6px}
+    .hadith-ref{font-size:.76rem;color:var(--accent);font-weight:600}
+
+    /* ── STEP CARD ── */
+    .step{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;margin-bottom:14px;position:relative;overflow:hidden}
+    .step::before{content:'';position:absolute;left:0;top:0;height:100%;width:3px;background:var(--col-ruq)}
+    .step-lbl{font-size:.71rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--col-ruq);margin-bottom:6px}
+    .step-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;font-weight:600;margin-bottom:14px}
+    .step-src{font-size:.78rem;color:var(--faint);font-style:italic;margin-top:10px;line-height:1.5}
+
+    /* ── LIFESTYLE ── */
+    .habit{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+    .habit-icon{font-size:1.4rem;width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:var(--accent-bg);border-radius:10px;flex-shrink:0}
+    .habit-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:600;margin-bottom:4px}
+    .habit-ar{font-family:'Noto Naskh Arabic',serif;font-size:1.15rem;direction:rtl;color:var(--arabic);margin-bottom:4px;line-height:1.8}
+    .habit-tr{font-style:italic;font-size:.8rem;color:var(--muted);margin-bottom:5px}
+    .habit-desc{font-size:.86rem;color:var(--muted);line-height:1.55}
+    .habit-src{font-size:.73rem;color:var(--faint);font-style:italic;margin-top:4px}
+
+    /* ── SIGNS ── */
+    .signs-cat{margin-bottom:28px}
+    .sign-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px;display:flex;flex-direction:column;gap:6px}
+    .sign-card-top{display:flex;align-items:flex-start;gap:10px}
+    .sign-badge{font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+    .sign-badge.ayn{background:#fef9c3;color:#854d0e}
+    .sign-badge.sihr{background:#fce7f3;color:#9d174d}
+    .sign-badge.jinn{background:#ede9fe;color:#5b21b6}
+    .sign-badge.waswas{background:#dbeafe;color:#1e40af}
+    .sign-badge.children{background:#dcfce7;color:#166534}
+    .sign-badge.response{background:#d1fae5;color:#065f46}
+    .sign-card-text{font-size:.88rem;line-height:1.6;color:var(--text)}
+    .sign-card-note{font-size:.78rem;color:var(--muted);border-top:1px solid var(--border);padding-top:6px;line-height:1.5}
+    .signs-empty{text-align:center;color:var(--muted);padding:40px 20px;font-size:.9rem}
+    .cat-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .dot-a{background:var(--col-morn)}.dot-s{background:var(--col-sign)}.dot-x{background:var(--col-life)}
+    .sign-list{list-style:none;padding:0;margin:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .sign-li{padding:13px 18px;border-bottom:1px solid var(--border);display:flex;gap:11px;font-size:.88rem;line-height:1.55}
+    .sign-li:last-child{border-bottom:none}
+    .sign-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:8px}
+
+    /* ── PROGRESS COUNTER ── */
+    .prog-wrap{display:flex;align-items:center;gap:10px;margin-top:10px}
+    .prog-bar-track{flex:1;height:5px;background:var(--border);border-radius:99px;overflow:hidden}
+    .prog-bar-fill{height:100%;background:var(--accent);border-radius:99px;transition:width .3s ease}
+    .prog-label{font-size:.78rem;font-weight:600;color:var(--accent);white-space:nowrap;min-width:72px;text-align:right}
+    .prog-label.done{color:var(--green-done)}
+
+    /* ── DISCLAIMER ── */
+    .note{background:var(--bg-alt);border:1px solid var(--border);border-radius:10px;padding:14px 18px;font-size:.81rem;color:var(--muted);line-height:1.55;margin-top:28px}
+    .note strong{color:var(--text)}
+
+    /* ── AUDIO PLAYER ── */
+    .audio-row{margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
+    .audio-row-head{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+    .audio-icon{font-size:.8rem}
+    .audio-label{font-size:.72rem;color:var(--accent);font-weight:600;font-style:normal}
+    audio.audio-el{width:100%;display:block;height:36px;accent-color:var(--accent)}
+
+    /* ── SPEED CONTROL ── */
+    .speed-row{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:8px}
+    .speed-lbl{font-size:.74rem;color:var(--muted);margin-right:2px;white-space:nowrap}
+    .speed-btn{border:1px solid var(--border);background:var(--bg-alt);color:var(--muted);font-family:'Inter',sans-serif;font-size:.71rem;font-weight:600;padding:3px 9px;border-radius:20px;cursor:pointer;transition:all .15s;white-space:nowrap}
+    .speed-btn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+
+    /* ── HOME / DASHBOARD ── */
+    .stat-row{display:flex;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+    .stat-card{flex:1;min-width:80px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;text-align:center}
+    .stat-num{font-size:2.2rem;font-weight:700;color:var(--accent);line-height:1}
+    .stat-lbl{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:4px}
+    .week-row{display:flex;gap:6px;margin-bottom:22px;justify-content:space-between}
+    .week-day{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1}
+    .week-circle{width:36px;height:36px;border-radius:50%;border:2px solid var(--border);background:var(--bg-alt);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:var(--muted);transition:all .2s}
+    .week-circle.done{background:var(--accent);border-color:var(--accent);color:#fff}
+    .week-circle.today{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 3px var(--accent-bg)}
+    .week-name{font-size:.65rem;color:var(--faint)}
+    .quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:8px}
+    .quick-btn{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:left;cursor:pointer;transition:border-color .15s,box-shadow .15s;display:flex;flex-direction:column;gap:6px;width:100%}
+    .quick-btn:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(37,99,235,.12)}
+    .quick-icon{font-size:1.5rem}
+    .quick-label{font-size:.83rem;font-weight:600;color:var(--text)}
+    .quick-sub{font-size:.73rem;color:var(--muted)}
+    .home-greeting{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;font-weight:600;margin:0 0 4px}
+    .home-date{font-size:.8rem;color:var(--muted);margin-bottom:22px}
+    .home-section-title{font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+
+    /* ── LEARN (Duolingo-style) ── */
+    .course-sel{display:flex;gap:8px;margin-bottom:24px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+    .course-sel::-webkit-scrollbar{display:none}
+    .course-pill{flex-shrink:0;padding:8px 18px;border-radius:20px;border:2px solid var(--border);background:var(--bg-alt);font-size:.82rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s;white-space:nowrap}
+    .course-pill.on{border-color:var(--accent);background:var(--accent);color:#fff}
+    .lesson-path{display:flex;flex-direction:column;gap:16px;padding-bottom:40px}
+    .path-unit{width:100%}
+    .path-unit-hdr{background:var(--accent);color:#fff;border-radius:12px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+    .path-unit-title{font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+    .path-unit-sub{font-size:.75rem;opacity:.8}
+    .path-row{display:flex;justify-content:center;align-items:center;gap:0;position:relative;margin-bottom:4px}
+    /* ─── Duolingo-style path ─── */
+    .path-nodes{display:flex;flex-direction:column;align-items:center;padding:28px 0 36px;position:relative}
+    .path-nodes::before{content:'';position:absolute;top:44px;bottom:44px;left:50%;width:4px;background:var(--border);transform:translateX(-50%);border-radius:2px;z-index:0}
+    .node-wrap{display:flex;flex-direction:column;align-items:center;gap:7px;position:relative;z-index:1;margin-bottom:8px;transition:margin .3s}
+    /* Zigzag offsets — sine wave, reset per unit */
+    .node-wrap:nth-child(1){margin-left:0}
+    .node-wrap:nth-child(2){margin-left:68px}
+    .node-wrap:nth-child(3){margin-left:100px}
+    .node-wrap:nth-child(4){margin-left:68px}
+    .node-wrap:nth-child(5){margin-left:0}
+    .node-wrap:nth-child(6){margin-left:-68px}
+    .node-wrap:nth-child(7){margin-left:-100px}
+    .node-wrap:nth-child(8){margin-left:-68px}
+    .node-wrap:nth-child(9){margin-left:0}
+    .node-wrap:nth-child(10){margin-left:68px}
+    .node-label{font-size:.65rem;font-weight:700;color:var(--muted);text-align:center;max-width:80px;line-height:1.2}
+    .lesson-node{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;transition:transform .15s,box-shadow .15s;font-size:2rem;line-height:1;padding:0;position:relative}
+    .lesson-node:hover:not(.locked){transform:scale(1.1)}
+    .lesson-node.done{background:#16a34a;box-shadow:0 5px 0 #15803d,0 6px 14px rgba(22,163,74,.35)}
+    .lesson-node.done::after{content:'★';position:absolute;top:-8px;right:-4px;font-size:.7rem;background:#fbbf24;color:#000;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-weight:700}
+    .lesson-node.available{background:var(--accent);box-shadow:0 5px 0 #1d4ed8,0 6px 18px rgba(37,99,235,.45);animation:duo-bounce .9s ease-in-out infinite alternate}
+    .lesson-node.locked{background:#374151;box-shadow:0 4px 0 #1f2937;cursor:default;opacity:.7}
+    @keyframes duo-bounce{from{transform:translateY(0)}to{transform:translateY(-5px)}}
+    .lesson-node-icon{font-size:2rem;line-height:1}
+    /* Quiz modal */
+    .quiz-overlay{display:none;position:fixed;inset:0;background:var(--bg);z-index:200;align-items:flex-start;justify-content:center;padding:0;overflow-y:auto}
+    .quiz-overlay.open{display:flex}
+    .quiz-box{background:var(--bg);width:100%;max-width:640px;min-height:100vh;padding:28px 24px 60px;border-radius:0}
+    .quiz-close{float:none;border:none;background:none;cursor:pointer;font-size:.9rem;color:var(--muted);display:inline-flex;align-items:center;gap:6px;padding:0 0 20px;font-weight:600;letter-spacing:.02em}
+    .quiz-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.8rem;font-weight:600;margin:0 0 4px;clear:both}
+    .quiz-sub{font-size:.82rem;color:var(--muted);margin-bottom:18px;line-height:1.5}
+    .quiz-info{background:var(--accent-bg);border-left:3px solid var(--accent);padding:14px 16px;border-radius:0 8px 8px 0;font-size:.87rem;color:var(--text);line-height:1.6;margin-bottom:20px}
+    .quiz-q{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:14px;line-height:1.5}
+    .quiz-opts{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+    .quiz-opt{padding:13px 16px;border:2px solid var(--border);border-radius:10px;background:var(--bg-alt);cursor:pointer;font-size:.88rem;text-align:left;transition:all .15s;line-height:1.4}
+    .quiz-opt:hover:not(:disabled){border-color:var(--accent-lt)}
+    .quiz-opt.correct{background:rgba(5,150,105,.12);border-color:#059669;color:#065F46}
+    .quiz-opt.wrong{background:rgba(220,38,38,.08);border-color:#dc2626;color:#991b1b}
+    .quiz-feedback{font-size:.86rem;padding:12px 16px;border-radius:8px;margin-bottom:16px;line-height:1.5}
+    .quiz-feedback.good{background:rgba(5,150,105,.1);color:#065F46}
+    .quiz-feedback.bad{background:rgba(220,38,38,.08);color:#991b1b}
+    .quiz-next{background:var(--accent);color:#fff;border:none;border-radius:12px;padding:14px 24px;font-size:.9rem;font-weight:600;cursor:pointer;width:100%;margin-top:4px}
+    .xp-earn{display:inline-flex;align-items:center;gap:5px;background:rgba(251,191,36,.15);color:#d97706;border-radius:20px;padding:5px 12px;font-size:.8rem;font-weight:700;margin-bottom:14px}
+    .course-panel{display:none}.course-panel.on{display:block}
+
+    /* ── DHIKR COUNTER ── */
+    .counter-wrap{text-align:center;padding:10px 0 30px}
+    .counter-presets-sel{display:flex;justify-content:flex-start;gap:8px;margin-bottom:22px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+    .counter-presets-sel::-webkit-scrollbar{display:none}
+    .counter-pre-btn{flex-shrink:0;padding:7px 15px;border:2px solid var(--border);border-radius:20px;background:var(--bg-alt);font-size:.8rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s;white-space:nowrap}
+    .counter-pre-btn.on{border-color:var(--accent);background:var(--accent);color:#fff}
+    .counter-dhikr-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;color:var(--muted);margin-bottom:4px}
+    .counter-dhikr-ar{font-family:'Noto Naskh Arabic',serif;font-size:1.8rem;color:var(--arabic);direction:rtl;margin-bottom:6px;line-height:1.8}
+    .counter-dhikr-tr{font-style:italic;font-size:.82rem;color:var(--muted);margin-bottom:20px}
+    .counter-num{font-size:5.5rem;font-weight:700;color:var(--accent);line-height:1;margin-bottom:6px;font-variant-numeric:tabular-nums;transition:transform .08s}
+    .counter-num.pop{transform:scale(1.12)}
+    .counter-target-txt{font-size:.82rem;color:var(--muted);margin-bottom:24px}
+    .counter-circle{width:190px;height:190px;border-radius:50%;background:var(--accent);color:#fff;border:none;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;margin:0 auto 28px;box-shadow:0 8px 28px rgba(37,99,235,.38);transition:transform .08s,box-shadow .08s;-webkit-tap-highlight-color:transparent;user-select:none}
+    .counter-circle:active{transform:scale(.94);box-shadow:0 4px 12px rgba(37,99,235,.25)}
+    .counter-circle-txt{font-size:1.05rem;font-weight:700;letter-spacing:.03em}
+    .counter-circle-sub{font-size:.72rem;opacity:.75;margin-top:2px}
+    .counter-prog-track{height:7px;background:var(--bg-alt);border-radius:99px;overflow:hidden;max-width:300px;margin:0 auto 16px}
+    .counter-prog-fill{height:100%;background:var(--accent);border-radius:99px;transition:width .25s}
+    .counter-actions-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+    .counter-act{padding:9px 20px;border:1.5px solid var(--border);border-radius:20px;background:var(--bg-alt);font-size:.82rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s}
+    .counter-act:hover{border-color:var(--accent);color:var(--accent)}
+    .counter-presets-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .counter-preset-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:13px 14px;cursor:pointer;text-align:left;transition:border-color .15s}
+    .counter-preset-card:hover{border-color:var(--accent)}
+    .counter-preset-name{font-size:.82rem;font-weight:600;color:var(--text);margin-bottom:2px}
+    .counter-preset-ar{font-family:'Noto Naskh Arabic',serif;font-size:1.1rem;direction:rtl;color:var(--arabic);margin-bottom:2px;line-height:1.7}
+    .counter-preset-tgt{font-size:.72rem;color:var(--muted)}
+
+    /* ── QURAN ── */
+    .quran-note{background:var(--accent-bg);border:1px solid rgba(37,99,235,.2);border-radius:10px;padding:13px 16px;font-size:.82rem;color:var(--muted);margin-bottom:18px;line-height:1.5}
+    .surah-list-grid{display:flex;flex-direction:column;gap:8px}
+    .surah-row-btn{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:border-color .15s;width:100%;text-align:left}
+    .surah-row-btn:hover{border-color:var(--accent-lt);box-shadow:0 2px 6px rgba(37,99,235,.1)}
+    .surah-num-badge{width:34px;height:34px;border-radius:50%;background:var(--accent-bg);color:var(--accent);font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .surah-name-en{font-size:.9rem;font-weight:600;color:var(--text)}
+    .surah-meta-txt{font-size:.73rem;color:var(--muted)}
+    .surah-name-ar-sm{font-family:'Noto Naskh Arabic',serif;font-size:1.1rem;color:var(--arabic);direction:rtl;margin-left:auto;flex-shrink:0}
+    .surah-view{display:none}
+    .surah-view.open{display:block}
+    .surah-list-grid.hidden{display:none}
+    .back-btn{background:none;border:none;color:var(--accent);font-size:.85rem;font-weight:600;cursor:pointer;padding:0 0 18px;display:flex;align-items:center;gap:6px}
+    .surah-view-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;font-weight:600;margin-bottom:4px}
+    .surah-view-meta{font-size:.78rem;color:var(--muted);margin-bottom:20px}
+    .ayah-wrap{border-bottom:1px solid var(--border);padding:20px 0}
+    .ayah-wrap:last-child{border-bottom:none}
+    .ayah-ar-text{font-family:'Noto Naskh Arabic',serif;font-size:1.8rem;direction:rtl;line-height:1.9;color:var(--arabic);text-align:right;margin-bottom:10px}
+    .ayah-tr-text{font-style:italic;font-size:.84rem;color:var(--muted);line-height:1.6;margin-bottom:6px}
+    .ayah-en-text{font-size:.87rem;color:var(--text);line-height:1.6}
+    .ayah-num-tag{font-size:.7rem;font-weight:700;color:var(--accent);background:var(--accent-bg);padding:2px 8px;border-radius:20px;display:inline-block;margin-bottom:8px}
+
+    /* ── RAAQIS ── */
+    .raaqi-filter{display:flex;gap:8px;margin-bottom:20px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+    .raaqi-filter::-webkit-scrollbar{display:none}
+    .raaqi-filt-btn{flex-shrink:0;padding:7px 15px;border:1.5px solid var(--border);border-radius:20px;background:var(--bg-alt);font-size:.8rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s}
+    .raaqi-filt-btn.on{border-color:var(--accent);background:var(--accent);color:#fff}
+    .raaqi-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:14px;transition:box-shadow .15s}
+    .raaqi-card:hover{box-shadow:0 4px 16px rgba(37,99,235,.1)}
+    .raaqi-top{display:flex;gap:14px;margin-bottom:12px}
+    .raaqi-avatar{width:64px;height:64px;border-radius:50%;background:var(--accent-bg);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;border:2px solid var(--border)}
+    .raaqi-body{flex:1;min-width:0}
+    .raaqi-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;font-weight:600;margin-bottom:2px}
+    .raaqi-role{font-size:.76rem;color:var(--accent);font-weight:600;margin-bottom:5px}
+    .raaqi-stars{display:flex;align-items:center;gap:5px;font-size:.82rem}
+    .star-filled{color:#f59e0b}
+    .star-count{font-size:.76rem;color:var(--muted)}
+    .raaqi-tags{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}
+    .raaqi-tag{font-size:.7rem;background:var(--accent-bg);color:var(--tag-text);padding:3px 9px;border-radius:20px;font-weight:600}
+    .raaqi-bio{font-size:.83rem;color:var(--muted);line-height:1.55;margin-bottom:12px}
+    .raaqi-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .raaqi-price-block .price-main{font-size:1rem;font-weight:700;color:var(--text)}
+    .raaqi-price-block .price-sub{font-size:.72rem;color:var(--muted)}
+    .raaqi-contact-btn{background:var(--accent);color:#fff;border:none;border-radius:20px;padding:9px 20px;font-size:.82rem;font-weight:600;cursor:pointer;transition:filter .15s}
+    .raaqi-contact-btn:hover{filter:brightness(1.1)}
+    .raaqi-badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+    .raaqi-badge{font-size:.69rem;color:var(--muted);display:flex;align-items:center;gap:3px;background:var(--bg-alt);padding:3px 8px;border-radius:20px}
+    .raaqi-disclaimer{background:var(--bg-alt);border:1px solid var(--border);border-radius:10px;padding:13px 16px;font-size:.78rem;color:var(--muted);line-height:1.55;margin-bottom:18px}
+    .raaqi-coming-soon{background:rgba(37,99,235,.07);border:1px dashed rgba(37,99,235,.25);border-radius:10px;padding:14px 18px;font-size:.82rem;color:var(--accent);margin-bottom:18px;text-align:center;font-weight:500}
+
+    @media(max-width:480px){
+      .hdr{padding:12px 16px 0}
+      .wrap{padding:0 16px 80px}
+      .arabic{font-size:1.6rem}
+      .arabic.lg{font-size:1.8rem}
+      .card{padding:16px}
+    }
+    @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+  
+    /* ── THEME TOGGLE ── */
+    .theme-btn{position:fixed;top:14px;right:14px;z-index:200;background:var(--surface);border:1.5px solid var(--border);border-radius:50%;width:36px;height:36px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.15);transition:transform .2s}
+    .theme-btn:hover{transform:scale(1.12)}
+    /* ── SEARCH UI ── */
+    .search-row{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+    .search-box{flex:1;padding:10px 14px;border-radius:12px;border:1.5px solid var(--border);background:var(--bg-alt);color:var(--text);font-size:.88rem;outline:none;transition:border-color .2s}
+    .search-box:focus{border-color:var(--accent)}
+    .cat-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+    .cat-btn{padding:5px 13px;border-radius:20px;border:1.5px solid var(--border);background:var(--bg-alt);color:var(--muted);font-size:.72rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .15s}
+    .cat-btn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+    /* ── HADITH CARD ── */
+    .hadith-card{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:12px;padding:16px 18px;margin-bottom:16px}
+    .hadith-text{font-size:.87rem;line-height:1.75;color:var(--text);font-style:italic;margin-bottom:8px}
+    .hadith-src{font-size:.73rem;color:var(--accent);font-weight:600}
+    /* ── ADHKAR / RUQYAH CARDS ── */
+    .dhikr-card{background:var(--surface);border-radius:12px;border:1px solid var(--border);padding:14px 16px;margin-bottom:10px}
+    .dhikr-name{font-weight:700;font-size:.88rem;color:var(--text);display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+    .dhikr-count{background:var(--accent);color:#fff;border-radius:20px;padding:2px 10px;font-size:.7rem;font-weight:700;white-space:nowrap}
+    .dhikr-ar{font-size:1.15rem;text-align:right;direction:rtl;line-height:1.85;color:var(--text);margin:8px 0}
+    .dhikr-tr{font-size:.78rem;color:var(--muted);font-style:italic;margin-bottom:4px}
+    .dhikr-en{font-size:.8rem;line-height:1.55;color:var(--text);margin-bottom:8px}
+    .dhikr-src{font-size:.69rem;color:var(--faint)}
+    .search-empty{text-align:center;color:var(--muted);padding:40px 0;font-size:.88rem}
+    /* ── LIFESTYLE GRID ── */
+    .ls-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    .ls-card{background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:12px 8px;cursor:pointer;text-align:center;transition:all .18s}
+    .ls-card:hover,.ls-card.sel{border-color:var(--accent);background:var(--bg-alt);box-shadow:0 0 0 2px var(--accent)}
+    .ls-icon{font-size:1.7rem;margin-bottom:4px}
+    .ls-name{font-size:.68rem;font-weight:700;color:var(--text);line-height:1.2}
+    .ls-detail{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-top:14px;display:none}
+    .ls-detail.show{display:block}
+    .ls-dtitle{font-size:.95rem;font-weight:700;margin-bottom:10px;color:var(--accent)}
+    .ls-dar{font-size:1.2rem;text-align:right;direction:rtl;line-height:1.9;margin:10px 0;color:var(--text)}
+    .ls-dtr{font-size:.8rem;color:var(--muted);font-style:italic;margin-bottom:6px}
+    .ls-den{font-size:.83rem;line-height:1.6;color:var(--text);margin-bottom:8px}
+    .ls-dsrc{font-size:.71rem;color:var(--accent);font-weight:600}
+    /* ── QURAN (all surahs) ── */
+    .surah-count-badge{font-size:.7rem;color:var(--muted);margin-bottom:10px}
+    .surah-loading{text-align:center;padding:36px;color:var(--muted);font-size:.88rem}
+    .surah-error{color:#ef4444;text-align:center;padding:20px;font-size:.85rem}
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr">
+  <div class="hdr-top">
+    <h1 class="hdr-title">Ruqyah</h1>
+    <span class="hdr-sub">Protection &amp; Healing</span>
+  </div>
+  <button class="theme-btn" id="theme-toggle" title="Toggle theme">☀️</button>
+  <nav class="tabs" role="tablist">
+    <button class="tab on" data-t="home">🏠 Home</button>
+    <button class="tab" data-t="adhkar">🌅 Adhkar</button>
+    <button class="tab" data-t="ruqyah">📖 Ruqyah</button>
+    <button class="tab" data-t="learn">🎓 Learn</button>
+    <button class="tab" data-t="counter">📿 Counter</button>
+    <button class="tab" data-t="quran">🕌 Quran</button>
+    <button class="tab" data-t="lifestyle">🌿 Lifestyle</button>
+    <button class="tab" data-t="signs">🔍 Signs</button>
+    <button class="tab" data-t="raaqis">🤲 Raaqis</button>
+  </nav>
+</header>
+
+<main class="wrap">
+
+<!-- ═══════════════ ADHKAR ═══════════════ -->
+<div class="panel" id="p-adhkar">
+  <div class="sec-head">
+    <h2 class="sec-title">Morning &amp; Evening Adhkar</h2>
+    <p class="sec-desc">Recite these after Fajr (morning) and after 'Asr or Maghrib (evening). Check each off as you complete it — resets daily.</p>
+    <div class="prog-wrap">
+      <div class="prog-bar-track"><div class="prog-bar-fill" id="prog-fill" style="width:0%"></div></div>
+      <span class="prog-label" id="prog-label">0 / 6 done</span>
+    </div>
+    <div class="speed-row">
+      <span class="speed-lbl">Recitation speed:</span>
+      <button class="speed-btn" data-speed="0.75">0.75×</button>
+      <button class="speed-btn on" data-speed="1">1×</button>
+      <button class="speed-btn" data-speed="1.25">1.25×</button>
+      <button class="speed-btn" data-speed="1.5">1.5×</button>
+      <button class="speed-btn" data-speed="2">2×</button>
+    </div>
+  </div>
+  <div class="toggle-row">
+    <button class="tog on" data-time="morning">Morning — صباح</button>
+    <button class="tog" data-time="evening">Evening — مساء</button>
+  </div>
+
+  <!-- MORNING -->
+  <div id="morning">
+    <div class="card" data-id="m1">
+      <div class="card-hdr"><span class="card-name">Ayat al-Kursi</span><span class="card-count">1×</span></div>
+      <div class="arabic">اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ</div>
+      <div class="translit">Allahu la ilaha illa Huwal-Hayyul-Qayyum. La ta'khudhuhu sinatun wala nawm. Lahu ma fis-samawati wama fil-ard. Man dhal-ladhi yashfa'u 'indahu illa bi-idhnih. Ya'lamu ma bayna aydihim wama khalfahum, wala yuhituna bi shay'im-min 'ilmihi illa bima sha'. Wasi'a kursiyyuhus-samawati wal-ard, wala ya'uduhu hifdhuhuma. Wa Huwal-'Aliyyul-'Adhim.</div>
+      <div class="meaning">"Allah — there is no deity except Him, the Ever-Living, the Sustainer of existence. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and on the earth..."</div>
+      <div class="audio-row">
+        <div class="audio-row-head"><span class="audio-icon">🎙</span><span class="audio-label">Mishary Alafasy — 2:255</span></div>
+        <audio class="audio-el" controls preload="none" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/262.mp3"></audio>
+      </div>
+      <div class="card-foot">
+        <span class="source">Al-Baqarah 2:255 · Whoever recites it after prayer, nothing stands between them and Paradise but death — Nasa'i (authenticated)</span>
+        <button class="chk" data-id="m1">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="m2">
+      <div class="card-hdr"><span class="card-name">Al-Mu'awwidhat — Al-Ikhlas, Al-Falaq, An-Nas</span><span class="card-count">3× each</span></div>
+      <div class="arabic sm">قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ</div>
+      <div class="translit">Qul Huwallahu Ahad. Allahus-Samad. Lam yalid walam yulad. Walam yakun lahu kufuwan ahad. — Then Al-Falaq and An-Nas, 3× each.</div>
+      <div class="meaning">Al-Ikhlas, Al-Falaq, An-Nas — the three surahs the Prophet ﷺ recited every morning and evening. Al-Falaq specifically seeks refuge from "the evil of an envier when he envies" — directly addressing hasad.</div>
+      <div class="audio-row" data-playlist="https://cdn.islamic.network/quran/audio/128/ar.alafasy/6222.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6223.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6224.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6225.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6226.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6227.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6228.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6229.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6230.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6231.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6232.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6233.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6234.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6235.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6236.mp3">
+        <div class="audio-row-head"><span class="audio-icon">🎙</span><span class="audio-label">Mishary Alafasy — Al-Ikhlas → Al-Falaq → An-Nas (auto-advances)</span></div>
+        <audio class="audio-el" controls preload="none" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/6222.mp3"></audio>
+      </div>
+      <div class="card-foot">
+        <span class="source">Abu Dawud 5082 · "They are sufficient for you against all things" — the Prophet ﷺ</span>
+        <button class="chk" data-id="m2">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="m3">
+      <div class="card-hdr"><span class="card-name">Bismillah Protection</span><span class="card-count">3×</span></div>
+      <div class="arabic">بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ</div>
+      <div class="translit">Bismillahil-ladhi la yadurru ma'as-mihi shay'un fil-ardi wala fis-sama'i wa Huwas-Sami'ul-'Alim.</div>
+      <div class="meaning">"In the name of Allah with Whose name nothing can cause harm on earth or in the heavens, and He is the All-Hearing, the All-Knowing."</div>
+      <div class="card-foot">
+        <span class="source">Abu Dawud 5088 · Tirmidhi 3388 — "Whoever says this 3× will not be afflicted by sudden calamity that day or night"</span>
+        <button class="chk" data-id="m3">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="m4">
+      <div class="card-hdr"><span class="card-name">Seeking Refuge in Allah's Perfect Words</span><span class="card-count">3×</span></div>
+      <div class="arabic">أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ</div>
+      <div class="translit">A'udhu bi kalimatil-lahit-tammati min sharri ma khalaq.</div>
+      <div class="meaning">"I seek refuge in the perfect words of Allah from the evil of all He has created."</div>
+      <div class="card-foot">
+        <span class="source">Sahih Muslim 2708 — "Whoever says this 3× in the evening will not be harmed by any poison or sting that night"</span>
+        <button class="chk" data-id="m4">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="m5">
+      <div class="card-hdr"><span class="card-name">Dua for 'Afiyah — Well-Being</span><span class="card-count">1×</span></div>
+      <div class="arabic sm">اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ ۝ اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي</div>
+      <div class="translit">Allahumma inni as'alukal-'afwa wal-'afiyata fid-dunya wal-akhirah. Allahumma inni as'alukal-'afwa wal-'afiyata fi dini wa dunyaya wa ahli wa mali.</div>
+      <div class="meaning">"O Allah, I ask You for pardon and well-being in this world and the Hereafter. O Allah, I ask You for pardon and well-being in my religion, my worldly affairs, my family, and my wealth."</div>
+      <div class="card-foot">
+        <span class="source">Abu Dawud 5074 · Ibn Majah 3871 — Ibn 'Umar: "The Prophet ﷺ never abandoned these words morning or evening"</span>
+        <button class="chk" data-id="m5">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="m6">
+      <div class="card-hdr"><span class="card-name">Hasbiyallah — Sufficient is Allah</span><span class="card-count">7×</span></div>
+      <div class="arabic">حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ</div>
+      <div class="translit">Hasbiyallahu la ilaha illa Huwa, 'alayhi tawakkaltu wa Huwa Rabbul-'arshil-'adhim.</div>
+      <div class="meaning">"Sufficient for me is Allah; there is no deity except Him. In Him I place my trust, and He is the Lord of the great Throne."</div>
+      <div class="card-foot">
+        <span class="source">Quran 9:129 · Abu Dawud 5081 — "Whoever says this 7× morning and evening, Allah will suffice him in whatever worries him"</span>
+        <button class="chk" data-id="m6">✓ Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENING -->
+  <div id="evening" style="display:none">
+    <div class="card" data-id="e1">
+      <div class="card-hdr"><span class="card-name">Ayat al-Kursi</span><span class="card-count">1×</span></div>
+      <div class="arabic">اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ</div>
+      <div class="translit">Allahu la ilaha illa Huwal-Hayyul-Qayyum. La ta'khudhuhu sinatun wala nawm. Lahu ma fis-samawati wama fil-ard. Man dhal-ladhi yashfa'u 'indahu illa bi-idhnih. Ya'lamu ma bayna aydihim wama khalfahum, wala yuhituna bi shay'im-min 'ilmihi illa bima sha'. Wasi'a kursiyyuhus-samawati wal-ard, wala ya'uduhu hifdhuhuma. Wa Huwal-'Aliyyul-'Adhim.</div>
+      <div class="meaning">"Allah — there is no deity except Him, the Ever-Living, the Sustainer of existence. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and on the earth. Who is it that can intercede with Him except by His permission? He knows what is before them and what is behind them, and they encompass not a thing of His knowledge except for what He wills. His throne extends over the heavens and the earth, and their preservation tires Him not. And He is the Most High, the Magnificent."</div>
+      <div class="audio-row">
+        <div class="audio-row-head"><span class="audio-icon">🎙</span><span class="audio-label">Mishary Alafasy — 2:255</span></div>
+        <audio class="audio-el" controls preload="none" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/262.mp3"></audio>
+      </div>
+      <div class="card-foot">
+        <span class="source">Al-Baqarah 2:255 · Abu Dawud 5010</span>
+        <button class="chk" data-id="e1">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="e2">
+      <div class="card-hdr"><span class="card-name">Al-Mu'awwidhat — Al-Ikhlas, Al-Falaq, An-Nas</span><span class="card-count">3× each</span></div>
+      <div class="arabic sm">قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِنْ شَرِّ مَا خَلَقَ ۝ وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ ۝ وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ۝ وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ</div>
+      <div class="translit">Qul a'udhu bi Rabbil-falaq. Min sharri ma khalaq. Wamin sharri ghasiqin idha waqab. Wamin sharrin-naffathati fil-'uqad. Wamin sharri hasidin idha hasad. — Also Al-Ikhlas and An-Nas 3× each.</div>
+      <div class="meaning">Al-Falaq specifically protects against knot-blowers (sihr) and enviers (hasad). Together these three surahs are "sufficient for you against everything."</div>
+      <div class="audio-row" data-playlist="https://cdn.islamic.network/quran/audio/128/ar.alafasy/6222.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6223.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6224.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6225.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6226.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6227.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6228.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6229.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6230.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6231.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6232.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6233.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6234.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6235.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6236.mp3">
+        <div class="audio-row-head"><span class="audio-icon">🎙</span><span class="audio-label">Mishary Alafasy — Al-Ikhlas → Al-Falaq → An-Nas (auto-advances)</span></div>
+        <audio class="audio-el" controls preload="none" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/6222.mp3"></audio>
+      </div>
+      <div class="card-foot">
+        <span class="source">Abu Dawud 5082 · Tirmidhi 3575</span>
+        <button class="chk" data-id="e2">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="e3">
+      <div class="card-hdr"><span class="card-name">Bismillah Protection</span><span class="card-count">3×</span></div>
+      <div class="arabic">بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ</div>
+      <div class="translit">Bismillahil-ladhi la yadurru ma'as-mihi shay'un fil-ardi wala fis-sama'i wa Huwas-Sami'ul-'Alim.</div>
+      <div class="meaning">"In the name of Allah with Whose name nothing can cause harm on earth or in the heavens, and He is the All-Hearing, the All-Knowing."</div>
+      <div class="card-foot">
+        <span class="source">Abu Dawud 5088 · Tirmidhi 3388</span>
+        <button class="chk" data-id="e3">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="e4">
+      <div class="card-hdr"><span class="card-name">Seeking Refuge in Allah's Perfect Words</span><span class="card-count">3×</span></div>
+      <div class="arabic">أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ</div>
+      <div class="translit">A'udhu bi kalimatil-lahit-tammati min sharri ma khalaq.</div>
+      <div class="meaning">"I seek refuge in the perfect words of Allah from the evil of all He has created."</div>
+      <div class="card-foot">
+        <span class="source">Sahih Muslim 2708 — especially potent in the evening</span>
+        <button class="chk" data-id="e4">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="e5">
+      <div class="card-hdr"><span class="card-name">Sayyidul Istighfar — Master of Forgiveness</span><span class="card-count">1×</span></div>
+      <div class="arabic sm">اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ</div>
+      <div class="translit">Allahumma Anta Rabbi la ilaha illa Anta, khalaqtani wa ana 'abduka, wa ana 'ala 'ahdika wa wa'dika mastata'tu, a'udhu bika min sharri ma sana'tu, abu'u laka bini'matika 'alayya, wa abu'u bidhanbī, faghfir li, fa innahu la yaghfirudh-dhunuba illa Anta.</div>
+      <div class="meaning">"O Allah, You are my Lord. There is no deity except You. You created me and I am Your servant, holding to Your covenant and promise as best I can. I seek refuge in You from the evil of what I have done..."</div>
+      <div class="card-foot">
+        <span class="source">Sahih Bukhari 6306 — "Whoever says it in the evening with certainty and dies that night enters Paradise"</span>
+        <button class="chk" data-id="e5">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="e6">
+      <div class="card-hdr"><span class="card-name">Protection for Family — Evening Du'a</span><span class="card-count">1×</span></div>
+      <div class="arabic">أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ وَمِنْ كُلِّ عَيْنٍ لَامَّةٍ</div>
+      <div class="translit">A'udhu bi kalimatil-lahit-tammati min kulli shaytanin wa hammatin wa min kulli 'aynin lammah.</div>
+      <div class="meaning">"I seek refuge in the perfect words of Allah from every devil, every poisonous creature, and every evil eye." — The Prophet ﷺ traced this to Ibrahim عليه السلام protecting Isma'il and Ishaq.</div>
+      <div class="card-foot">
+        <span class="source">Sahih Bukhari 3371 · Abu Dawud 4737 — say over children and loved ones</span>
+        <button class="chk" data-id="e6">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="e7">
+      <div class="card-hdr"><span class="card-name">Amsayna — Entering the Evening</span><span class="card-count">1×</span></div>
+      <div class="arabic sm">أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ</div>
+      <div class="translit">Amsayna wa amsal-mulku lillahi, wal-hamdu lillah. La ilaha illallahu wahdahu la sharika lah, lahul-mulku walahul-hamd, wa huwa 'ala kulli shay'in qadir. Rabbi as'aluka khayra ma fi hadhihil-laylati wa khayra ma ba'daha, wa a'udhu bika min sharri ma fi hadhihil-laylati wa sharri ma ba'daha. Rabbi a'udhu bika minal-kasali wa su'il-kibar. Rabbi a'udhu bika min 'adhabin fin-nar wa 'adhabin fil-qabr.</div>
+      <div class="meaning">"We have entered the evening, and the dominion has entered the evening belonging entirely to Allah. All praise is for Allah. There is no deity except Allah, alone with no partner — to Him belongs the dominion and all praise, and He is over all things capable. My Lord, I ask You for the good of this night and what follows it, and I seek refuge in You from the evil of this night and what follows it. My Lord, I seek refuge in You from laziness and the evil of old age. My Lord, I seek refuge in You from punishment in the Fire and punishment in the grave."</div>
+      <div class="card-foot">
+        <span class="source">Sahih Muslim 2723 — narrated by Ibn Mas'ud رضي الله عنه · The Prophet ﷺ recited this each evening as the day ended</span>
+        <button class="chk" data-id="e7">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="e8">
+      <div class="card-hdr"><span class="card-name">Bika Amsayna — By You We Enter the Evening</span><span class="card-count">1×</span></div>
+      <div class="arabic">اللَّهُمَّ بِكَ أَمْسَيْنَا وَبِكَ أَصْبَحْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ الْمَصِيرُ</div>
+      <div class="translit">Allahumma bika amsayna, wa bika asbahna, wa bika nahya, wa bika namutu, wa ilaykal-masir.</div>
+      <div class="meaning">"O Allah, by You we have entered the evening, and by You we enter the morning. By You we live and by You we die, and to You is the final return."</div>
+      <div class="card-foot">
+        <span class="source">Abu Dawud 5068 · Tirmidhi 3391 — said by the Prophet ﷺ specifically upon entering the evening; affirms that every moment of existence belongs to Allah alone</span>
+        <button class="chk" data-id="e8">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="e9">
+      <div class="card-hdr"><span class="card-name">Shukr for the Evening's Blessings</span><span class="card-count">1×</span></div>
+      <div class="arabic sm">اللَّهُمَّ مَا أَمْسَى بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ</div>
+      <div class="translit">Allahumma ma amsa bi min ni'matin aw bi-ahadin min khalqika, fa minka wahdaka la sharika lak, falakal-hamdu walakash-shukr.</div>
+      <div class="meaning">"O Allah, whatever blessing has reached me this evening — or any of Your creation — it is from You alone, with no partner. To You belongs all praise and to You belongs all thanks."</div>
+      <div class="card-foot">
+        <span class="source">Abu Dawud 5073 · Ibn al-Sunni — "Whoever says this in the evening has fulfilled the thanks due for that day"; a direct expression of gratitude as the day closes</span>
+        <button class="chk" data-id="e9">✓ Done</button>
+      </div>
+    </div>
+
+    <div class="card" data-id="e10">
+      <div class="card-hdr"><span class="card-name">La Ilaha Illallah — Tahlil at Evening</span><span class="card-count">10×</span></div>
+      <div class="arabic">لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ</div>
+      <div class="translit">La ilaha illallahu wahdahu la sharika lahu, lahul-mulku walahul-hamd, wa huwa 'ala kulli shay'in qadir.</div>
+      <div class="meaning">"There is no deity except Allah, alone with no partner. To Him belongs the dominion and to Him belongs all praise, and He is over all things capable."</div>
+      <div class="card-foot">
+        <span class="source">Tirmidhi 3474 · Ibn Sunni — "Whoever says this 10× in the evening: 10 good deeds written, 10 sins erased, 10 ranks raised, and he is shielded from Shaytan until morning"; equal in reward to freeing a slave</span>
+        <button class="chk" data-id="e10">✓ Done</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px">
+    <p class="home-section-title" style="margin-bottom:10px">🔍 Browse All Adhkar</p>
+    <input class="search-box" id="adhkar-search" placeholder="Search adhkar by name, Arabic, or meaning…" oninput="searchAdhkar()">
+    <div class="cat-row" id="adhkar-cats">
+      <button class="cat-btn on" data-cat="all" onclick="setAdhkarCat(this)">All</button>
+      <button class="cat-btn" data-cat="morning" onclick="setAdhkarCat(this)">Morning</button>
+      <button class="cat-btn" data-cat="evening" onclick="setAdhkarCat(this)">Evening</button>
+      <button class="cat-btn" data-cat="sleep" onclick="setAdhkarCat(this)">Sleep</button>
+      <button class="cat-btn" data-cat="after_salah" onclick="setAdhkarCat(this)">After Salah</button>
+      <button class="cat-btn" data-cat="general" onclick="setAdhkarCat(this)">General</button>
+      <button class="cat-btn" data-cat="travel" onclick="setAdhkarCat(this)">Travel</button>
+      <button class="cat-btn" data-cat="food" onclick="setAdhkarCat(this)">Food</button>
+    </div>
+    <div id="adhkar-results"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ RUQYAH ═══════════════ -->
+<div class="panel" id="p-ruqyah">
+  <div style="margin-bottom:20px">
+    <p class="home-section-title" style="margin:0 0 10px">🔍 Search Ruqyah</p>
+    <input class="search-box" id="ruqyah-search" placeholder="Search by purpose, name, or text…" oninput="searchRuqyah()">
+    <div class="cat-row" id="ruqyah-cats">
+      <button class="cat-btn on" data-cat="all" onclick="setRuqyahCat(this)">All</button>
+      <button class="cat-btn" data-cat="general" onclick="setRuqyahCat(this)">General</button>
+      <button class="cat-btn" data-cat="ayn" onclick="setRuqyahCat(this)">Evil Eye</button>
+      <button class="cat-btn" data-cat="sihr" onclick="setRuqyahCat(this)">Sihr</button>
+      <button class="cat-btn" data-cat="jinn" onclick="setRuqyahCat(this)">Jinn</button>
+      <button class="cat-btn" data-cat="self" onclick="setRuqyahCat(this)">Self-Ruqyah</button>
+      <button class="cat-btn" data-cat="pain" onclick="setRuqyahCat(this)">Pain/Illness</button>
+    </div>
+    <div id="ruqyah-results"></div>
+  </div>
+  <div class="sec-head">
+    <h2 class="sec-title">Ruqyah Recitation Guide</h2>
+    <p class="sec-desc">The Prophet ﷺ performed Ruqyah on himself using Al-Mu'awwidhat. Recite with wudu, with certainty that Allah alone is the Healer. You may recite over water to drink, over olive oil to apply, or blow lightly (nafth) onto your hands and pass them over the body.</p>
+    <div class="speed-row">
+      <span class="speed-lbl">Recitation speed:</span>
+      <button class="speed-btn" data-speed="0.75">0.75×</button>
+      <button class="speed-btn on" data-speed="1">1×</button>
+      <button class="speed-btn" data-speed="1.25">1.25×</button>
+      <button class="speed-btn" data-speed="1.5">1.5×</button>
+      <button class="speed-btn" data-speed="2">2×</button>
+    </div>
+  </div>
+
+  <div class="hadith">
+    <div class="arabic sm" style="border:none;padding:0 0 10px;margin:0">الْعَيْنُ حَقٌّ ۚ وَلَوْ كَانَ شَيْءٌ سَابَقَ الْقَدَرَ سَبَقَتْهُ الْعَيْنُ</div>
+    <div class="hadith-en">"The evil eye is real. If anything were to overtake the divine decree, it would be the evil eye." — Narrated by Ibn Abbas رضي الله عنه</div>
+    <div class="hadith-ref">Sahih Muslim 2188</div>
+  </div>
+
+  <div class="step">
+    <div class="step-lbl">Step 1 · The Opening</div>
+    <div class="step-name">Surah Al-Fatiha — 7 times</div>
+    <div class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ۝ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمَٰنِ الرَّحِيمِ ۝ مَالِكِ يَوْمِ الدِّينِ ۝ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ۝ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۝ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</div>
+    <div class="step-src">Called "Ash-Shifa'" (The Cure) by the scholars. A companion recited it 7× over a scorpion sting and the man was healed — Bukhari 5736. The greatest surah in the Quran — Bukhari 5006.</div>
+    <div class="audio-row" data-playlist="https://cdn.islamic.network/quran/audio/128/ar.alafasy/1.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/2.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/3.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/4.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/5.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/7.mp3">
+      <div class="audio-row-head"><span class="audio-icon">🎙</span><span class="audio-label">Mishary Alafasy — Al-Fatiha (auto-advances ayah by ayah)</span></div>
+      <audio class="audio-el" controls preload="none" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/1.mp3"></audio>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-lbl">Step 2 · The Throne Verse</div>
+    <div class="step-name">Ayat al-Kursi — 3 times</div>
+    <div class="arabic">اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ</div>
+    <div class="step-src">"The greatest verse in the Quran" — Sahih Muslim 810. Whoever recites it before sleeping, a guardian from Allah protects him and Shaytan cannot approach — Bukhari 3275.</div>
+  </div>
+
+  <div class="step">
+    <div class="step-lbl">Step 3 · Seal of Al-Baqarah</div>
+    <div class="step-name">Al-Baqarah 2:285–286 — 1 time</div>
+    <div class="arabic sm">آمَنَ الرَّسُولُ بِمَا أُنزِلَ إِلَيْهِ مِن رَّبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِّن رُّسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ ۝ لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا ۚ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ ۗ رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِن قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ ۖ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا ۚ أَنتَ مَوْلَانَا فَانصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ</div>
+    <div class="step-src">"Whoever recites the last two verses of Surah Al-Baqarah at night, they will suffice him." — Sahih Bukhari 5009, Muslim 807.</div>
+    <div class="audio-row" data-playlist="https://cdn.islamic.network/quran/audio/128/ar.alafasy/292.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/293.mp3">
+      <div class="audio-row-head"><span class="audio-icon">🎙</span><span class="audio-label">Mishary Alafasy — 2:285 → 2:286 (auto-advances)</span></div>
+      <audio class="audio-el" controls preload="none" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/292.mp3"></audio>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-lbl">Step 4 · Pure Tawhid</div>
+    <div class="step-name">Surah Al-Ikhlas — 3 times</div>
+    <div class="arabic lg">قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ</div>
+    <div class="step-src">Quran 112 — Equal in reward to one-third of the Quran (Bukhari 5013). The declaration of pure Tawhid is the foundation of all Ruqyah. Sihr operates through shirk; Tawhid dismantles it.</div>
+    <div class="audio-row" data-playlist="https://cdn.islamic.network/quran/audio/128/ar.alafasy/6222.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6223.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6224.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6225.mp3">
+      <div class="audio-row-head"><span class="audio-icon">🎙</span><span class="audio-label">Mishary Alafasy — Al-Ikhlas</span></div>
+      <audio class="audio-el" controls preload="none" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/6222.mp3"></audio>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-lbl">Step 5 · Refuge from Darkness &amp; Envy</div>
+    <div class="step-name">Surah Al-Falaq — 3 times</div>
+    <div class="arabic lg">قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِنْ شَرِّ مَا خَلَقَ ۝ وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ ۝ وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ۝ وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ</div>
+    <div class="step-src">Quran 113 — Verse 4 explicitly names those who blow on knots (sihr). Verse 5 seeks refuge from the envier. This surah was revealed in the context of sihr performed against the Prophet ﷺ.</div>
+    <div class="audio-row" data-playlist="https://cdn.islamic.network/quran/audio/128/ar.alafasy/6226.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6227.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6228.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6229.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6230.mp3">
+      <div class="audio-row-head"><span class="audio-icon">🎙</span><span class="audio-label">Mishary Alafasy — Al-Falaq</span></div>
+      <audio class="audio-el" controls preload="none" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/6226.mp3"></audio>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-lbl">Step 6 · Refuge from Whispers</div>
+    <div class="step-name">Surah An-Nas — 3 times</div>
+    <div class="arabic lg">قُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَٰهِ النَّاسِ ۝ مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ۝ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ۝ مِنَ الْجِنَّةِ وَالنَّاسِ</div>
+    <div class="step-src">Quran 114 — Seeks refuge from Al-Waswas Al-Khannas, the whisperer who retreats — the shayateen of jinn and humans who plant doubt, fear, and confusion.</div>
+    <div class="audio-row" data-playlist="https://cdn.islamic.network/quran/audio/128/ar.alafasy/6231.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6232.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6233.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6234.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6235.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6236.mp3">
+      <div class="audio-row-head"><span class="audio-icon">🎙</span><span class="audio-label">Mishary Alafasy — An-Nas</span></div>
+      <audio class="audio-el" controls preload="none" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/6231.mp3"></audio>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Guidance:</strong> Recite with full conviction (yaqin) that Allah is the only Healer. If symptoms are severe or persistent, seek a trustworthy Raaqi who uses only Quran and authentic du'a, requires no suspicious rituals, and charges no excessive fees. Ruqyah is not a substitute for medical care — rule out physical causes first.
+  </div>
+</div>
+
+<!-- ═══════════════ LIFESTYLE ═══════════════ -->
+<div class="panel" id="p-lifestyle">
+  <div class="sec-head">
+    <h2 class="sec-title">Daily Islamic Lifestyle</h2>
+    <p class="sec-desc">Tap any daily activity to see the dua, Sunnah practice, or hadith connected to it.</p>
+  </div>
+  <div class="ls-grid" id="ls-grid"></div>
+  <div class="ls-detail" id="ls-detail">
+    <button class="back-btn" onclick="closeLsDetail()" style="margin-bottom:12px">← Back</button>
+    <div class="ls-dtitle" id="ls-dtitle"></div>
+    <div class="ls-dar" id="ls-dar"></div>
+    <div class="ls-dtr" id="ls-dtr"></div>
+    <div class="ls-den" id="ls-den"></div>
+    <div class="ls-dsrc" id="ls-dsrc"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ SIGNS ═══════════════ -->
+<div class="panel" id="p-signs">
+  <div class="sec-head">
+    <h2 class="sec-title">Signs &amp; Symptoms</h2>
+    <p class="sec-desc">Search through signs of Ayn, Sihr, Jinn, and Waswas. Always rule out medical causes first — Ruqyah complements, never replaces, proper medical care.</p>
+  </div>
+
+  <input class="search-box" id="signs-search" placeholder="Search signs, symptoms, or keywords…" oninput="searchSigns()" style="margin-bottom:12px">
+
+  <div class="cat-row" id="signs-cats">
+    <button class="cat-btn on" data-scat="all" onclick="setSignsCat(this)">All</button>
+    <button class="cat-btn" data-scat="ayn" onclick="setSignsCat(this)">👁 Evil Eye</button>
+    <button class="cat-btn" data-scat="sihr" onclick="setSignsCat(this)">🪄 Sihr</button>
+    <button class="cat-btn" data-scat="jinn" onclick="setSignsCat(this)">🌀 Jinn</button>
+    <button class="cat-btn" data-scat="waswas" onclick="setSignsCat(this)">💭 Waswas</button>
+    <button class="cat-btn" data-scat="children" onclick="setSignsCat(this)">👶 Children</button>
+    <button class="cat-btn" data-scat="response" onclick="setSignsCat(this)">✅ Response</button>
+  </div>
+
+  <div class="surah-count-badge" id="signs-count" style="margin-bottom:14px">Loading…</div>
+  <div id="signs-results"></div>
+
+  <div class="note" style="margin-top:20px">
+    <strong>Important:</strong> Many of these signs may have natural medical or psychological causes. Always consult a qualified physician first. The scholars — Ibn Taymiyyah, Ibn al-Qayyim, and Shaykh Ibn Baaz (rahimahumullah) — are unanimous that Ruqyah with the Quran and authentic du'a is permissible and recommended, while all forms of counter-magic and fortune-telling are strictly prohibited.
+  </div>
+</div>
+
+
+<!-- ═══════════════ HOME ═══════════════ -->
+<div class="panel on" id="p-home">
+  <div class="sec-head">
+    <h2 class="sec-title">Assalamu Alaikum</h2>
+    <p class="sec-desc" id="home-date-sub"></p>
+  </div>
+
+  <p class="home-section-title">This Week's Streak</p>
+  <div class="week-row" id="week-row"></div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-num" id="home-streak">0</div>
+      <div class="stat-lbl">🔥 Day Streak</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="home-xp">0</div>
+      <div class="stat-lbl">⭐ XP Earned</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="home-done">0</div>
+      <div class="stat-lbl">✅ Today</div>
+    </div>
+  </div>
+
+  <p class="home-section-title">📜 Hadith of the Day</p>
+  <div class="hadith-card">
+    <div class="hadith-text" id="daily-hadith-text">Loading…</div>
+    <div class="hadith-src" id="daily-hadith-src"></div>
+  </div>
+
+  <p class="home-section-title">Quick Access</p>
+  <div class="quick-grid">
+    <button class="quick-btn" data-goto="adhkar"><span class="quick-icon">🌅</span><span class="quick-label">Adhkar</span><span class="quick-sub">Morning &amp; Evening</span></button>
+    <button class="quick-btn" data-goto="ruqyah"><span class="quick-icon">📖</span><span class="quick-label">Ruqyah</span><span class="quick-sub">Self-healing guide</span></button>
+    <button class="quick-btn" data-goto="learn"><span class="quick-icon">🎓</span><span class="quick-label">Learn</span><span class="quick-sub">Daily courses</span></button>
+    <button class="quick-btn" data-goto="counter"><span class="quick-icon">📿</span><span class="quick-label">Counter</span><span class="quick-sub">Dhikr counter</span></button>
+    <button class="quick-btn" data-goto="quran"><span class="quick-icon">🕌</span><span class="quick-label">Quran</span><span class="quick-sub">Key Ruqyah surahs</span></button>
+    <button class="quick-btn" data-goto="raaqis"><span class="quick-icon">🤲</span><span class="quick-label">Raaqis</span><span class="quick-sub">Find a Raaqi</span></button>
+  </div>
+</div>
+
+<!-- ═══════════════ LEARN ═══════════════ -->
+<div class="panel" id="p-learn">
+  <div class="sec-head">
+    <h2 class="sec-title">Learn</h2>
+    <p class="sec-desc">Build your knowledge of Ruqyah, hadith, and Islam through daily lessons. Complete lessons to earn XP.</p>
+    <div class="stat-row" style="margin-top:16px;margin-bottom:0">
+      <div class="stat-card"><div class="stat-num" id="learn-xp">0</div><div class="stat-lbl">⭐ XP Earned</div></div>
+      <div class="stat-card"><div class="stat-num" id="learn-done">0</div><div class="stat-lbl">✅ Lessons Done</div></div>
+    </div>
+  </div>
+
+  <div class="course-sel">
+    <button class="course-pill on" data-course="ruqyah">📖 Daily Ruqyah</button>
+    <button class="course-pill" data-course="hadith">📚 Hadith</button>
+    <button class="course-pill" data-course="trivia">🌟 Islamic Trivia</button>
+  </div>
+
+  <!-- RUQYAH COURSE -->
+  <div class="course-panel on" id="cp-ruqyah">
+    <div class="lesson-path">
+      <div class="path-unit">
+        <div class="path-unit-hdr" style="background:linear-gradient(135deg,#2563EB,#3B82F6)">
+          <div><div class="path-unit-title">Unit 1 · The Foundation</div><div class="path-unit-sub">What is Ruqyah &amp; why it works</div></div>
+          <div class="path-unit-sub" id="u1r-xp">0 / 30 XP</div>
+        </div>
+        <div class="path-nodes">
+          <div class="node-wrap"><button class="lesson-node available" data-lesson="r1">📖</button><span class="node-label">Intro</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="r2">🔒</button><span class="node-label">Al-Fatiha</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="r3">🔒</button><span class="node-label">Quiz</span></div>
+        </div>
+      </div>
+      <div class="path-unit">
+        <div class="path-unit-hdr" style="background:linear-gradient(135deg,#059669,#34D399)">
+          <div><div class="path-unit-title">Unit 2 · The Recitations</div><div class="path-unit-sub">Core Ruqyah verses</div></div>
+          <div class="path-unit-sub" id="u2r-xp">0 / 40 XP</div>
+        </div>
+        <div class="path-nodes">
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="r4">🔒</button><span class="node-label">Ayat al-Kursi</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="r5">🔒</button><span class="node-label">Mu'awwidhat</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="r6">🔒</button><span class="node-label">Quiz</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="r7">🔒</button><span class="node-label">Challenge</span></div>
+        </div>
+      </div>
+      <div class="path-unit">
+        <div class="path-unit-hdr" style="background:linear-gradient(135deg,#7C3AED,#A78BFA)">
+          <div><div class="path-unit-title">Unit 3 · Protection Routine</div><div class="path-unit-sub">Morning &amp; Evening shield</div></div>
+          <div class="path-unit-sub" id="u3r-xp">0 / 30 XP</div>
+        </div>
+        <div class="path-nodes">
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="r8">🔒</button><span class="node-label">Morning</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="r9">🔒</button><span class="node-label">Evening</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="r10">🔒</button><span class="node-label">Final Quiz</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HADITH COURSE -->
+  <div class="course-panel" id="cp-hadith">
+    <div class="lesson-path">
+      <div class="path-unit">
+        <div class="path-unit-hdr" style="background:linear-gradient(135deg,#d97706,#fbbf24)">
+          <div><div class="path-unit-title">Unit 1 · Protection Hadith</div><div class="path-unit-sub">What the Prophet ﷺ taught us</div></div>
+          <div class="path-unit-sub" id="u1h-xp">0 / 30 XP</div>
+        </div>
+        <div class="path-nodes">
+          <div class="node-wrap"><button class="lesson-node available" data-lesson="h1">🌙</button><span class="node-label">Night Dhikr</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="h2">🔒</button><span class="node-label">Home Guard</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="h3">🔒</button><span class="node-label">Quiz</span></div>
+        </div>
+      </div>
+      <div class="path-unit">
+        <div class="path-unit-hdr" style="background:linear-gradient(135deg,#dc2626,#f87171)">
+          <div><div class="path-unit-title">Unit 2 · Ayn &amp; Sihr</div><div class="path-unit-sub">Recognising &amp; treating</div></div>
+          <div class="path-unit-sub" id="u2h-xp">0 / 30 XP</div>
+        </div>
+        <div class="path-nodes">
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="h4">🔒</button><span class="node-label">Ayn is Real</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="h5">🔒</button><span class="node-label">Sihr</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="h6">🔒</button><span class="node-label">Quiz</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRIVIA COURSE -->
+  <div class="course-panel" id="cp-trivia">
+    <div class="lesson-path">
+      <div class="path-unit">
+        <div class="path-unit-hdr" style="background:linear-gradient(135deg,#0891b2,#22d3ee)">
+          <div><div class="path-unit-title">Unit 1 · Quran Trivia</div><div class="path-unit-sub">Test your Quran knowledge</div></div>
+          <div class="path-unit-sub" id="u1t-xp">0 / 40 XP</div>
+        </div>
+        <div class="path-nodes">
+          <div class="node-wrap"><button class="lesson-node available" data-lesson="t1">⭐</button><span class="node-label">Surahs</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="t2">🔒</button><span class="node-label">Ayahs</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="t3">🔒</button><span class="node-label">Prophets</span></div>
+          <div class="node-wrap"><button class="lesson-node locked" data-lesson="t4">🔒</button><span class="node-label">Final</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ COUNTER ═══════════════ -->
+<div class="panel" id="p-counter">
+  <div class="sec-head">
+    <h2 class="sec-title">Dhikr Counter</h2>
+    <p class="sec-desc">Tap the circle to count. Choose a dhikr below or start freely.</p>
+  </div>
+  <div class="counter-wrap">
+    <div class="counter-presets-sel" id="counter-preset-row">
+      <button class="counter-pre-btn on" data-dhikr="sub" data-ar="سُبْحَانَ اللَّهِ" data-tr="SubhanAllah" data-name="SubhanAllah" data-target="33">SubhanAllah · 33</button>
+      <button class="counter-pre-btn" data-dhikr="alh" data-ar="الْحَمْدُ لِلَّهِ" data-tr="Alhamdulillah" data-name="Alhamdulillah" data-target="33">Alhamdulillah · 33</button>
+      <button class="counter-pre-btn" data-dhikr="akb" data-ar="اللَّهُ أَكْبَرُ" data-tr="Allahu Akbar" data-name="Allahu Akbar" data-target="34">Allahu Akbar · 34</button>
+      <button class="counter-pre-btn" data-dhikr="lil" data-ar="لَا إِلَٰهَ إِلَّا اللَّهُ" data-tr="La ilaha illallah" data-name="La ilaha illallah" data-target="100">La ilaha illallah · 100</button>
+      <button class="counter-pre-btn" data-dhikr="ist" data-ar="أَسْتَغْفِرُ اللَّهَ" data-tr="Astaghfirullah" data-name="Astaghfirullah" data-target="100">Istighfar · 100</button>
+      <button class="counter-pre-btn" data-dhikr="sal" data-ar="صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ" data-tr="Allahumma salli 'ala Muhammad" data-name="Salawat" data-target="100">Salawat · 100</button>
+    </div>
+    <div class="counter-dhikr-name" id="ctr-name">SubhanAllah</div>
+    <div class="counter-dhikr-ar" id="ctr-ar">سُبْحَانَ اللَّهِ</div>
+    <div class="counter-dhikr-tr" id="ctr-tr">Glory be to Allah</div>
+    <div class="counter-num" id="ctr-num">0</div>
+    <div class="counter-target-txt" id="ctr-tgt-txt">Target: 33</div>
+    <button class="counter-circle" id="ctr-tap">
+      <span class="counter-circle-txt">TAP</span>
+      <span class="counter-circle-sub">to count</span>
+    </button>
+    <div class="counter-prog-track"><div class="counter-prog-fill" id="ctr-prog" style="width:0%"></div></div>
+    <div class="counter-actions-row">
+      <button class="counter-act" id="ctr-minus">−1</button>
+      <button class="counter-act" id="ctr-reset">Reset</button>
+      <button class="counter-act" id="ctr-add10">+10</button>
+    </div>
+    <p class="home-section-title" style="text-align:left">Tasbih After Prayer (33-33-34)</p>
+    <div class="counter-presets-grid">
+      <div class="counter-preset-card" data-dhikr="sub" data-ar="سُبْحَانَ اللَّهِ" data-tr="SubhanAllah" data-name="SubhanAllah" data-target="33">
+        <div class="counter-preset-name">SubhanAllah</div>
+        <div class="counter-preset-ar">سُبْحَانَ اللَّهِ</div>
+        <div class="counter-preset-tgt">33× · after each prayer</div>
+      </div>
+      <div class="counter-preset-card" data-dhikr="alh" data-ar="الْحَمْدُ لِلَّهِ" data-tr="Alhamdulillah" data-name="Alhamdulillah" data-target="33">
+        <div class="counter-preset-name">Alhamdulillah</div>
+        <div class="counter-preset-ar">الْحَمْدُ لِلَّهِ</div>
+        <div class="counter-preset-tgt">33× · after each prayer</div>
+      </div>
+      <div class="counter-preset-card" data-dhikr="akb" data-ar="اللَّهُ أَكْبَرُ" data-tr="Allahu Akbar" data-name="Allahu Akbar" data-target="34">
+        <div class="counter-preset-name">Allahu Akbar</div>
+        <div class="counter-preset-ar">اللَّهُ أَكْبَرُ</div>
+        <div class="counter-preset-tgt">34× · after each prayer</div>
+      </div>
+      <div class="counter-preset-card" data-dhikr="lil" data-ar="لَا إِلَٰهَ إِلَّا اللَّهُ" data-tr="La ilaha illallah" data-name="La ilaha illallah" data-target="100">
+        <div class="counter-preset-name">La ilaha illallah</div>
+        <div class="counter-preset-ar">لَا إِلَٰهَ إِلَّا اللَّهُ</div>
+        <div class="counter-preset-tgt">100× · daily</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ QURAN ═══════════════ -->
+<div class="panel" id="p-quran">
+  <div class="sec-head">
+    <h2 class="sec-title">Quran — All 114 Surahs</h2>
+    <p class="sec-desc">Browse all surahs. Key Ruqyah surahs are highlighted. Tap any surah to read and listen.</p>
+  </div>
+  <div class="search-row">
+    <input class="search-box" id="surah-search" placeholder="Search surah by name or number…" oninput="filterSurahs()">
+  </div>
+  <div class="cat-row">
+    <button class="cat-btn on" data-stype="all" onclick="setSurahType(this)">All (114)</button>
+    <button class="cat-btn" data-stype="Makki" onclick="setSurahType(this)">Makki</button>
+    <button class="cat-btn" data-stype="Madani" onclick="setSurahType(this)">Madani</button>
+    <button class="cat-btn" data-stype="ruqyah" onclick="setSurahType(this)">⭐ Ruqyah</button>
+  </div>
+  <div class="surah-count-badge" id="surah-count">114 surahs</div>
+  <div class="surah-list-grid" id="surah-list"></div>
+  <div class="surah-view" id="surah-view" style="display:none">
+    <button class="back-btn" id="surah-back" onclick="closeSurahView()">← Back to Surahs</button>
+    <div id="surah-view-content"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ RAAQIS ═══════════════ -->
+<div class="panel" id="p-raaqis">
+  <div class="sec-head">
+    <h2 class="sec-title">Find a Raaqi</h2>
+    <p class="sec-desc">Connect with qualified Raaqis who perform Ruqyah using Quran and authentic Sunnah only.</p>
+  </div>
+  <div class="raaqi-coming-soon">🚧 This directory is coming soon — the profiles below are examples of what it will look like.</div>
+  <div class="raaqi-disclaimer"><strong>Important:</strong> Always verify a Raaqi uses only Quran and authentic du'a, charges fair fees, requires no suspicious rituals, and performs Ruqyah openly. Avoid anyone who asks for your mother's name, requests strange items, or uses unauthenticated methods.</div>
+  <div class="raaqi-filter">
+    <button class="raaqi-filt-btn on" data-filter="all">All Specializations</button>
+    <button class="raaqi-filt-btn" data-filter="sihr">Sihr</button>
+    <button class="raaqi-filt-btn" data-filter="ayn">Ayn / Hasad</button>
+    <button class="raaqi-filt-btn" data-filter="jinn">Jinn Possession</button>
+    <button class="raaqi-filt-btn" data-filter="online">Online Sessions</button>
+  </div>
+  <div id="raaqi-list">
+    <div class="raaqi-card" data-tags="sihr ayn jinn">
+      <div class="raaqi-top">
+        <div class="raaqi-avatar">🧕</div>
+        <div class="raaqi-body">
+          <div class="raaqi-name">Sheikh Ibrahim Al-Qahtani</div>
+          <div class="raaqi-role">Senior Raaqi · 14 years experience</div>
+          <div class="raaqi-stars"><span class="star-filled">★★★★★</span><span class="star-count">4.9 (127 reviews)</span></div>
+        </div>
+      </div>
+      <div class="raaqi-tags"><span class="raaqi-tag">Sihr</span><span class="raaqi-tag">Ayn</span><span class="raaqi-tag">Jinn</span></div>
+      <div class="raaqi-bio">Specializes in cases of sihr and jinn possession. Trained under Shaykh Abdullah Al-Yahya. Uses only Quran, authentic du'a, and Sidr water. Does not charge excessive fees.</div>
+      <div class="raaqi-foot">
+        <div class="raaqi-price-block"><div class="price-main">$45 <span>/ session</span></div></div>
+        <button class="raaqi-contact-btn">Contact</button>
+      </div>
+      <div class="raaqi-badges"><span class="raaqi-badge">✓ Verified method</span><span class="raaqi-badge">📍 Detroit, MI</span><span class="raaqi-badge">🎥 Online available</span></div>
+    </div>
+    <div class="raaqi-card" data-tags="ayn online">
+      <div class="raaqi-top">
+        <div class="raaqi-avatar">🧔</div>
+        <div class="raaqi-body">
+          <div class="raaqi-name">Ustadh Muhammad Hassan</div>
+          <div class="raaqi-role">Raaqi &amp; Islamic Counselor · 8 years</div>
+          <div class="raaqi-stars"><span class="star-filled">★★★★★</span><span class="star-count">4.8 (89 reviews)</span></div>
+        </div>
+      </div>
+      <div class="raaqi-tags"><span class="raaqi-tag">Ayn / Hasad</span><span class="raaqi-tag">Online</span></div>
+      <div class="raaqi-bio">Focuses on ayn and hasad cases. Offers online Ruqyah sessions via video call with guided self-Ruqyah follow-up. Combines Ruqyah with Islamic counseling and tawakkul coaching.</div>
+      <div class="raaqi-foot">
+        <div class="raaqi-price-block"><div class="price-main">$30 <span>/ session</span></div></div>
+        <button class="raaqi-contact-btn">Contact</button>
+      </div>
+      <div class="raaqi-badges"><span class="raaqi-badge">✓ Online sessions</span><span class="raaqi-badge">📍 Available worldwide</span></div>
+    </div>
+    <div class="raaqi-card" data-tags="sihr ayn online">
+      <div class="raaqi-top">
+        <div class="raaqi-avatar">🧕</div>
+        <div class="raaqi-body">
+          <div class="raaqi-name">Sister Fatima Al-Zahra</div>
+          <div class="raaqi-role">Female Raaqi · Sisters only · 6 years</div>
+          <div class="raaqi-stars"><span class="star-filled">★★★★★</span><span class="star-count">5.0 (63 reviews)</span></div>
+        </div>
+      </div>
+      <div class="raaqi-tags"><span class="raaqi-tag">Sisters only</span><span class="raaqi-tag">Ayn</span><span class="raaqi-tag">Sihr</span><span class="raaqi-tag">Online</span></div>
+      <div class="raaqi-bio">Qualified female Raaqi for sisters seeking a mahram-appropriate session. Trained in Ruqyah ash-Shar'iyyah. In-person sessions in a full Islamically appropriate environment.</div>
+      <div class="raaqi-foot">
+        <div class="raaqi-price-block"><div class="price-main">$35 <span>/ session</span></div></div>
+        <button class="raaqi-contact-btn">Contact</button>
+      </div>
+      <div class="raaqi-badges"><span class="raaqi-badge">♀ Sisters only</span><span class="raaqi-badge">📍 Chicago, IL</span><span class="raaqi-badge">🎥 Online available</span></div>
+    </div>
+    <div class="raaqi-card" data-tags="jinn sihr">
+      <div class="raaqi-top">
+        <div class="raaqi-avatar">🧔</div>
+        <div class="raaqi-body">
+          <div class="raaqi-name">Sheikh Abdullah Al-Dawsari</div>
+          <div class="raaqi-role">Senior Raaqi · 20+ years experience</div>
+          <div class="raaqi-stars"><span class="star-filled">★★★★★</span><span class="star-count">4.9 (214 reviews)</span></div>
+        </div>
+      </div>
+      <div class="raaqi-tags"><span class="raaqi-tag">Jinn Possession</span><span class="raaqi-tag">Sihr al-Tafreeq</span></div>
+      <div class="raaqi-bio">Extensive experience with severe jinn possession cases and sihr al-tafreeq (magic of separation between spouses). Follows the methodology of Ibn Taymiyyah and Ibn al-Qayyim strictly.</div>
+      <div class="raaqi-foot">
+        <div class="raaqi-price-block"><div class="price-main">$60 <span>/ session</span></div></div>
+        <button class="raaqi-contact-btn">Contact</button>
+      </div>
+      <div class="raaqi-badges"><span class="raaqi-badge">✓ Verified method</span><span class="raaqi-badge">📍 Houston, TX</span></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Quiz Modal Overlay -->
+<div class="quiz-overlay" id="quiz-overlay">
+  <div class="quiz-box" id="quiz-box"></div>
+</div>
+</main>
+
+<script>
+// Tab switching
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
+    btn.classList.add('on');
+    document.getElementById('p-' + btn.dataset.t).classList.add('on');
+  });
+});
+
+// Morning/Evening toggle
+let currentTime = 'morning';
+document.querySelectorAll('.tog').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tog').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    currentTime = btn.dataset.time;
+    document.getElementById('morning').style.display = (currentTime === 'morning') ? 'block' : 'none';
+    document.getElementById('evening').style.display = (currentTime === 'evening') ? 'block' : 'none';
+    updateProgress();
+  });
+});
+
+// Checklist — resets daily
+const today = new Date().toDateString();
+let done = {};
+try {
+  const s = JSON.parse(localStorage.getItem('rq-done') || '{}');
+  if (s.date === today) done = s.items || {};
+} catch(e) {}
+
+function save() {
+  try { localStorage.setItem('rq-done', JSON.stringify({date: today, items: done})); } catch(e) {}
+}
+
+function getIds() {
+  const prefix = currentTime === 'morning' ? 'm' : 'e';
+  return Array.from(document.querySelectorAll(`#${currentTime} .card[data-id]`)).map(c => c.dataset.id);
+}
+
+function updateProgress() {
+  const ids   = getIds();
+  const total = ids.length;
+  const count = ids.filter(id => !!done[id]).length;
+  const pct   = total ? Math.round(count / total * 100) : 0;
+  const fill  = document.getElementById('prog-fill');
+  const lbl   = document.getElementById('prog-label');
+  if (fill) fill.style.width = pct + '%';
+  if (lbl) {
+    lbl.textContent = count + ' / ' + total + ' done';
+    lbl.className = 'prog-label' + (count === total && total > 0 ? ' done' : '');
+  }
+}
+
+function apply(id) {
+  const card = document.querySelector(`.card[data-id="${id}"]`);
+  const btn  = document.querySelector(`.chk[data-id="${id}"]`);
+  if (!card || !btn) return;
+  const isDone = !!done[id];
+  card.classList.toggle('done', isDone);
+  btn.classList.toggle('on', isDone);
+  btn.textContent = isDone ? '✓ Done' : '✓ Done';
+}
+
+Object.keys(done).forEach(apply);
+updateProgress();
+
+document.querySelectorAll('.chk').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const id = this.dataset.id;
+    if (done[id]) { delete done[id]; } else { done[id] = 1; }
+    save();
+    apply(id);
+    updateProgress();
+  });
+});
+
+// ── AUDIO PLAYER ──
+let audioSpeed = 1;
+
+// Speed control — sync all .speed-btn groups and apply to all audio elements
+document.querySelectorAll('.speed-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const speed = parseFloat(btn.dataset.speed);
+    audioSpeed = speed;
+    document.querySelectorAll('.speed-btn').forEach(b => {
+      b.classList.toggle('on', parseFloat(b.dataset.speed) === speed);
+    });
+    document.querySelectorAll('audio.audio-el').forEach(a => {
+      a.playbackRate = speed;
+    });
+  });
+});
+
+// Apply speed when playback starts
+document.querySelectorAll('audio.audio-el').forEach(audio => {
+  audio.addEventListener('play', () => { audio.playbackRate = audioSpeed; });
+});
+
+// Playlist: auto-advance to next track on ended
+document.querySelectorAll('.audio-row[data-playlist]').forEach(row => {
+  const urls = row.dataset.playlist.split(',');
+  const audio = row.querySelector('audio.audio-el');
+  let idx = 0;
+  audio.addEventListener('ended', () => {
+    idx = (idx + 1) % urls.length;
+    if (idx > 0) {
+      audio.src = urls[idx];
+      audio.play();
+    } else {
+      audio.src = urls[0]; // reset to start after full cycle
+    }
+  });
+});
+
+// ── HOME DASHBOARD ──
+function buildHome() {
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const now  = new Date();
+  const row  = document.getElementById('week-row');
+  if (!row) return;
+  row.innerHTML = '';
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date(now); d.setDate(d.getDate() - i);
+    const key = d.toDateString();
+    const isToday = i === 0;
+    let dayDone = false;
+    try {
+      const s = JSON.parse(localStorage.getItem('rq-done') || '{}');
+      if (s.date === key && Object.keys(s.items || {}).length > 0) dayDone = true;
+      if (isToday && s.date === key) dayDone = Object.keys(s.items || {}).length >= 3;
+    } catch(e) {}
+    const div = document.createElement('div'); div.className = 'week-day';
+    const circ = document.createElement('div');
+    circ.className = 'week-circle' + (dayDone ? ' done' : '') + (isToday && !dayDone ? ' today' : '');
+    circ.textContent = dayDone ? '✓' : days[d.getDay()][0];
+    const name = document.createElement('div'); name.className = 'week-name';
+    name.textContent = days[d.getDay()];
+    div.appendChild(circ); div.appendChild(name); row.appendChild(div);
+  }
+  // date sub
+  const sub = document.getElementById('home-date-sub');
+  if (sub) sub.textContent = now.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  // done count today
+  let doneCount = 0;
+  try { const s = JSON.parse(localStorage.getItem('rq-done') || '{}');
+    if (s.date === now.toDateString()) doneCount = Object.keys(s.items || {}).length; } catch(e) {}
+  const homeD = document.getElementById('home-done'); if (homeD) homeD.textContent = doneCount;
+  // streak
+  let streak = 0;
+  try { const ss = JSON.parse(localStorage.getItem('rq-streak') || '0'); streak = parseInt(ss) || 0; } catch(e) {}
+  const homeS = document.getElementById('home-streak'); if (homeS) homeS.textContent = streak;
+  // xp
+  let xp = 0;
+  try { xp = parseInt(localStorage.getItem('rq-xp') || '0') || 0; } catch(e) {}
+  const homeX = document.getElementById('home-xp'); if (homeX) homeX.textContent = xp;
+}
+buildHome();
+
+// Quick-access grid
+document.querySelectorAll('.quick-btn[data-goto]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const t = btn.dataset.goto;
+    document.querySelectorAll('.tab').forEach(tb => tb.classList.toggle('on', tb.dataset.t === t));
+    document.querySelectorAll('.panel').forEach(p => p.classList.toggle('on', p.id === 'p-' + t));
+    window.scrollTo(0, 0);
+  });
+});
+
+// ── LEARN ──
+const LESSONS = {
+  r1:{title:'What is Ruqyah?',icon:'📖',xp:10,info:'Ruqyah (رقية) is the Prophetic practice of reciting Quran and authentic du\'a for protection and healing. The Prophet ﷺ performed Ruqyah on himself and his companions. It is the strongest spiritual medicine available to a believer.',q:'What is the primary source for Ruqyah?',opts:['Quran and authentic Sunnah','Amulets and talismans','Folk traditions','Numerology'],ans:0,fb:'Correct! Allah says: "We send down of the Quran that which is a healing and a mercy" (17:82). Only the Quran and authentic du\'a are permissible for Ruqyah.'},
+  r2:{title:'Al-Fatiha — The Healing',icon:'🌿',xp:10,info:'Al-Fatiha is called "Ash-Shifa\'" (The Cure) by the scholars. A companion recited it 7× over a scorpion sting and the man was healed (Bukhari 5736). The Prophet ﷺ called it "the greatest surah in the Quran."',q:'How many times did the Sahabi recite Al-Fatiha in the famous ruqyah incident?',opts:['3 times','5 times','7 times','10 times'],ans:2,fb:'Correct! 7 times — narrated in Bukhari 5736. This is why scholars recommend reciting Al-Fatiha 7× during Ruqyah.'},
+  r3:{title:'Unit 1 Quiz',icon:'✅',xp:10,info:'',q:'Which surah is nicknamed "Ash-Shifa\'" (The Cure)?',opts:['Al-Baqarah','Al-Fatiha','Al-Ikhlas','Al-Falaq'],ans:1,fb:'Al-Fatiha earned this title through the hadith of the Sahabi who healed a scorpion victim by reciting it 7× — Bukhari 5736.'},
+  r4:{title:'Ayat al-Kursi',icon:'👑',xp:10,info:'Ayat al-Kursi (2:255) is "the greatest verse in the Quran" (Sahih Muslim 810). Whoever recites it after Salah — nothing stands between them and Paradise but death. Reciting it before sleeping places a guardian from Allah over the believer until morning.',q:'What does reciting Ayat al-Kursi before sleep do?',opts:['Grants forgiveness for all sins','Places a divine guardian until morning','Earns 1000 good deeds','Protects only from Shaytan'],ans:1,fb:'Correct! Bukhari 3275: the Prophet ﷺ confirmed that Shaytan cannot approach one who recites it before sleep until morning.'},
+  r5:{title:'Al-Mu\'awwidhat',icon:'🛡️',xp:10,info:'Al-Ikhlas, Al-Falaq, and An-Nas are called the "Mu\'awwidhat" — the surahs of seeking refuge. The Prophet ﷺ recited them 3× each morning and evening, blew on his hands, and wiped his body. Al-Falaq specifically names sihr (knot-blowers) and hasad.',q:'Al-Falaq verse 4 specifically protects against which of these?',opts:['Thunder and lightning','Those who blow on knots (sihr)','The evil eye from strangers','Jinn whisperers'],ans:1,fb:'Correct! "Wamin sharri n-naffathati fil-\'uqad" — from the evil of those who blow on knots. This is a direct reference to the practice of sihr.'},
+  r6:{title:'Unit 2 Quiz',icon:'✅',xp:10,info:'',q:'How many times should the three Mu\'awwidhat be recited in the morning/evening?',opts:['1×','3×','5×','7×'],ans:1,fb:'3× each, as established in Abu Dawud 5082. The Prophet ﷺ said: "They are sufficient for you against all things."'},
+  r7:{title:'Unit 2 Challenge',icon:'🏆',xp:10,info:'',q:'The Prophet ﷺ called which verse "the master of Quran\'s verses"?',opts:['Al-Fatiha:1','Al-Baqarah:255 (Ayat al-Kursi)','Al-Ikhlas:1','Al-Kahf:110'],ans:1,fb:'Ayat al-Kursi — Sahih Muslim 810. Ibn Qayyim calls it the most powerful verse for protection.'},
+  r8:{title:'Morning Adhkar',icon:'🌅',xp:10,info:'The morning adhkar form a "fortress" recited after Fajr. The Prophet ﷺ never abandoned them. Key ones: Ayat al-Kursi (1×), Al-Ikhlas/Falaq/Nas (3×), Bismillah protection (3×), Seeking refuge in Allah\'s perfect words (3×), and Hasbiyallah (7×).',q:'When should morning adhkar ideally be recited?',opts:['Before Fajr','After Fajr prayer','At sunrise exactly','Any time before Dhuhr'],ans:1,fb:'After Fajr prayer — the scholars agree this is the preferred time based on the hadith: "Whoever recites these after Fajr..." (Abu Dawud 5082)'},
+  r9:{title:'Evening Adhkar',icon:'🌙',xp:10,info:'Evening adhkar are recited after \'Asr or at Maghrib. They mirror the morning adhkar with adjusted wording (Amsayna instead of Asbahna). The Prophet ﷺ was consistent in both sets — they represent a believer\'s daily shield.',q:'What is the evening equivalent of "Asbahna" (we enter the morning)?',opts:['Amsayna (we enter the evening)','Layla (night)','Maghrib (sunset)','Asha (dinner)'],ans:0,fb:'Amsayna — "Amsayna wa amsal-mulku lillah" mirrors "Asbahna wa asbahal-mulku lillah." Same dua, adjusted for evening.'},
+  r10:{title:'Final Quiz',icon:'🎓',xp:10,info:'',q:'A complete daily self-Ruqyah session includes reciting Al-Fatiha how many times?',opts:['1 time','3 times','5 times','7 times'],ans:3,fb:'7 times — following the established practice of the companion who healed the scorpion victim (Bukhari 5736). This is the standard for Ruqyah sessions.'},
+  h1:{title:'Night Dhikr',icon:'🌙',xp:10,info:'The Prophet ﷺ taught specific dhikr for night: "Say: SubhanAllah 33×, Alhamdulillah 33×, Allahu Akbar 34× before sleeping — it is better for you than a servant" (Bukhari 6318). He also taught Ayat al-Kursi before sleep.',q:'What did the Prophet ﷺ say is better than a servant?',opts:['Daily Quran recitation','Tasbih before sleep (33-33-34)','Praying tahajjud','Fasting on Mondays'],ans:1,fb:'Correct! "Say SubhanAllah 33×, Alhamdulillah 33×, Allahu Akbar 34× when you go to your bed — it is better for you than a servant" — Bukhari 6318.'},
+  h2:{title:'Protecting the Home',icon:'🏠',xp:10,info:'"Do not turn your homes into graves — Shaytan flees from a house in which Surah Al-Baqarah is recited" — Sahih Muslim 780. The home filled with Quran recitation and dhikr is under constant protection.',q:'What surah, when recited in the home, causes Shaytan to flee?',opts:['Al-Fatiha','Al-Ikhlas','Al-Baqarah','Al-Kahf'],ans:2,fb:'Al-Baqarah — Sahih Muslim 780. Scholars recommend completing it at home at least every 3 days.'},
+  h3:{title:'Hadith Unit 1 Quiz',icon:'✅',xp:10,info:'',q:'Which hadith teaches us to say Bismillah when entering the home?',opts:['Bukhari 6311','Muslim 2018','Abu Dawud 5096','Tirmidhi 3388'],ans:2,fb:'Abu Dawud 5096 — "Bismillahi walajna..." When said, Shaytan announces to his companions: "You have no lodging here tonight."'},
+  h4:{title:'Ayn is Real',icon:'👁️',xp:10,info:'"The evil eye is real. If anything were to overtake the divine decree, it would be the evil eye" — Sahih Muslim 2188. The Prophet ﷺ confirmed ayn as a reality and prescribed Ruqyah as its cure.',q:'Which Sahih Muslim number confirms the reality of the evil eye?',opts:['Muslim 780','Muslim 810','Muslim 2188','Muslim 2230'],ans:2,fb:'Sahih Muslim 2188 — Ibn Abbas narrates: "Al-\'ayn haqqun..." The Prophet ﷺ confirmed it unambiguously.'},
+  h5:{title:'Sihr',icon:'🔮',xp:10,info:'Sihr (black magic) is confirmed in the Quran (2:102) and hadith. The Prophet ﷺ himself was affected by sihr (Bukhari 3268) and was healed through Ruqyah by Angel Jibril. This proves sihr is real and Ruqyah is its cure.',q:'In Quran 2:102, sihr is associated with which people?',opts:['The Pharaoh\'s magicians','The people of Babel and the angels Harut and Marut','The Jinn who followed Iblis','The tribe of \'Ad'],ans:1,fb:'Harut and Marut in Babel — "...and they followed what the devils recited... and what was revealed to the two angels at Babylon, Harut and Marut" (2:102).'},
+  h6:{title:'Ayn & Sihr Quiz',icon:'✅',xp:10,info:'',q:'What should someone who afflicts another with ayn do?',opts:['Nothing — it is not their fault','Make du\'a for the afflicted person','Perform ablution into a vessel and pour it over the afflicted','Recite Ayat al-Kursi'],ans:2,fb:'Correct! The Prophet ﷺ instructed the one who gives ayn to make wudu into a vessel, and the afflicted person washes with that water — Sahih Muslim 2188.'},
+  t1:{title:'Surah Quiz I',icon:'⭐',xp:10,info:'',q:'How many surahs are in the Quran?',opts:['112','113','114','115'],ans:2,fb:'114 surahs! The Quran has 114 surahs, 6,236 ayahs, and 30 juz. Al-Fatiha is the first and An-Nas is the last.'},
+  t2:{title:'Ayah Quiz',icon:'📜',xp:10,info:'',q:'Which surah has the most ayahs in the Quran?',opts:['Al-Imran','Al-Nisa','Al-Baqarah','Al-A\'raf'],ans:2,fb:'Al-Baqarah with 286 ayahs — the longest surah. It was revealed over 10 years in Madinah.'},
+  t3:{title:'Prophets Quiz',icon:'🌟',xp:10,info:'',q:'How many Prophets are mentioned by name in the Quran?',opts:['15','25','33','40'],ans:1,fb:'25 Prophets are mentioned by name in the Quran, from Adam عليه السلام to Muhammad ﷺ.'},
+  t4:{title:'Final Trivia',icon:'🏆',xp:10,info:'',q:'The Quran was revealed over how many years?',opts:['10 years','15 years','20 years','23 years'],ans:3,fb:'23 years — from the first revelation in the Cave of Hira (610 CE) until the final verse shortly before the Prophet ﷺ\'s passing (632 CE).'},
+};
+
+// Lesson unlock order per course
+const UNLOCK_ORDER = {
+  ruqyah: ['r1','r2','r3','r4','r5','r6','r7','r8','r9','r10'],
+  hadith: ['h1','h2','h3','h4','h5','h6'],
+  trivia: ['t1','t2','t3','t4']
+};
+
+let completedLessons = {};
+try { completedLessons = JSON.parse(localStorage.getItem('rq-lessons') || '{}'); } catch(e) {}
+let totalXP = 0;
+try { totalXP = parseInt(localStorage.getItem('rq-xp') || '0') || 0; } catch(e) {}
+
+function saveLearnState() {
+  try {
+    localStorage.setItem('rq-lessons', JSON.stringify(completedLessons));
+    localStorage.setItem('rq-xp', String(totalXP));
+  } catch(e) {}
+}
+
+function refreshLessonNodes() {
+  Object.entries(UNLOCK_ORDER).forEach(([course, ids]) => {
+    ids.forEach((id, idx) => {
+      const btn = document.querySelector(`.lesson-node[data-lesson="${id}"]`);
+      if (!btn) return;
+      const isDone = !!completedLessons[id];
+      const prevDone = idx === 0 || !!completedLessons[ids[idx-1]];
+      btn.className = 'lesson-node ' + (isDone ? 'done' : prevDone ? 'available' : 'locked');
+      // Update the icon directly (now the button's text content IS the icon)
+      btn.textContent = isDone ? '✓' : prevDone ? (LESSONS[id]?.icon || '📖') : '🔒';
+    });
+  });
+  // XP labels
+  const xpEl = document.getElementById('learn-xp');
+  const doneEl = document.getElementById('learn-done');
+  if (xpEl) xpEl.textContent = totalXP;
+  if (doneEl) doneEl.textContent = Object.keys(completedLessons).length;
+  buildHome();
+}
+refreshLessonNodes();
+
+// Course tab switching
+document.querySelectorAll('.course-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.course-pill').forEach(p => p.classList.remove('on'));
+    document.querySelectorAll('.course-panel').forEach(p => p.classList.remove('on'));
+    pill.classList.add('on');
+    const cp = document.getElementById('cp-' + pill.dataset.course);
+    if (cp) cp.classList.add('on');
+  });
+});
+
+// Quiz modal
+const overlay = document.getElementById('quiz-overlay');
+let currentLesson = null;
+let quizAnswered = false;
+
+document.querySelectorAll('.lesson-node').forEach(node => {
+  node.addEventListener('click', () => {
+    if (node.classList.contains('locked')) return;
+    currentLesson = node.dataset.lesson;
+    openQuiz(currentLesson);
+  });
+});
+
+function openQuiz(id) {
+  const L = LESSONS[id]; if (!L) return;
+  quizAnswered = !!completedLessons[id];
+  const box = document.getElementById('quiz-box');
+  if (!box) return;
+  const isDone = !!completedLessons[id];
+  box.innerHTML = `
+    <button class="quiz-close" id="qclose">← Back to Lessons</button>
+    <div class="quiz-title">${L.icon} ${L.title}</div>
+    <div class="quiz-sub">Lesson ${id.toUpperCase()} · ${L.xp} XP</div>
+    ${L.info ? `<div class="quiz-info">${L.info}</div>` : ''}
+    ${isDone ? `<div class="xp-earn">⭐ +${L.xp} XP earned!</div>` : ''}
+    <div class="quiz-q">${L.q}</div>
+    <div class="quiz-opts">
+      ${L.opts.map((o,i) => `<button class="quiz-opt${isDone ? (i===L.ans ? ' correct' : '') : ''}" data-i="${i}" ${isDone ? 'disabled' : ''}>${o}</button>`).join('')}
+    </div>
+    ${isDone ? `<div class="quiz-feedback good">✓ ${L.fb}</div>` : '<div class="quiz-feedback" id="qfb" style="display:none"></div>'}
+    <button class="quiz-next" id="qnext">${isDone ? 'Close' : 'Submit'}</button>
+  `;
+  document.getElementById('qclose').addEventListener('click', closeQuiz);
+  document.getElementById('qnext').addEventListener('click', () => {
+    if (isDone || quizAnswered) { closeQuiz(); return; }
+    const sel = box.querySelector('.quiz-opt.selected');
+    if (!sel) return;
+    const i = parseInt(sel.dataset.i);
+    const correct = i === L.ans;
+    box.querySelectorAll('.quiz-opt').forEach((o,j) => {
+      o.disabled = true;
+      if (j === L.ans) o.classList.add('correct');
+      else if (j === i && !correct) o.classList.add('wrong');
+    });
+    const fb = document.getElementById('qfb');
+    if (fb) { fb.className = 'quiz-feedback ' + (correct ? 'good' : 'bad');
+      fb.textContent = (correct ? '✓ ' : '✗ ') + L.fb; fb.style.display = ''; }
+    if (correct && !completedLessons[id]) {
+      completedLessons[id] = 1; totalXP += L.xp; saveLearnState(); refreshLessonNodes();
+    }
+    quizAnswered = true;
+    document.getElementById('qnext').textContent = 'Continue';
+  });
+  box.querySelectorAll('.quiz-opt').forEach(opt => {
+    opt.addEventListener('click', function() {
+      if (quizAnswered || isDone) return;
+      box.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
+      this.classList.add('selected');
+      this.style.borderColor = 'var(--accent)';
+    });
+  });
+  overlay.classList.add('open');
+}
+
+function closeQuiz() {
+  if (overlay) overlay.classList.remove('open');
+}
+
+// ── COUNTER ──
+let ctrCount = 0, ctrTarget = 33;
+let ctrData = {dhikr:'sub', ar:'سُبْحَانَ اللَّهِ', tr:'Glory be to Allah', name:'SubhanAllah', target:33};
+
+try {
+  const cs = JSON.parse(localStorage.getItem('rq-counter') || '{}');
+  if (cs.dhikr) ctrData = cs; ctrCount = cs.count || 0; ctrTarget = cs.target || 33;
+} catch(e) {}
+
+function updateCounter() {
+  const num = document.getElementById('ctr-num'); if (num) { num.textContent = ctrCount; }
+  const tgt = document.getElementById('ctr-tgt-txt'); if (tgt) tgt.textContent = 'Target: ' + ctrTarget;
+  const prog = document.getElementById('ctr-prog'); if (prog) prog.style.width = Math.min(100, Math.round(ctrCount/ctrTarget*100)) + '%';
+  try { localStorage.setItem('rq-counter', JSON.stringify({...ctrData, count: ctrCount})); } catch(e) {}
+}
+
+function loadCounterPreset(el) {
+  ctrData = {dhikr: el.dataset.dhikr, ar: el.dataset.ar, tr: el.dataset.tr, name: el.dataset.name, target: parseInt(el.dataset.target)};
+  ctrTarget = ctrData.target; ctrCount = 0;
+  const n = document.getElementById('ctr-name'); if (n) n.textContent = ctrData.name;
+  const a = document.getElementById('ctr-ar');   if (a) a.textContent = ctrData.ar;
+  const t = document.getElementById('ctr-tr');   if (t) t.textContent = ctrData.tr;
+  document.querySelectorAll('.counter-pre-btn').forEach(b => b.classList.toggle('on', b.dataset.dhikr === ctrData.dhikr));
+  updateCounter();
+}
+
+// init display
+const ctrN = document.getElementById('ctr-name'); if (ctrN) ctrN.textContent = ctrData.name;
+const ctrA = document.getElementById('ctr-ar'); if (ctrA) ctrA.textContent = ctrData.ar;
+const ctrT = document.getElementById('ctr-tr'); if (ctrT) ctrT.textContent = ctrData.tr;
+updateCounter();
+
+const tapBtn = document.getElementById('ctr-tap');
+if (tapBtn) {
+  tapBtn.addEventListener('click', () => {
+    ctrCount++;
+    if (ctrCount === ctrTarget) {
+      tapBtn.style.background = '#059669';
+      setTimeout(() => { tapBtn.style.background = ''; }, 600);
+    }
+    const numEl = document.getElementById('ctr-num');
+    if (numEl) { numEl.classList.add('pop'); setTimeout(() => numEl.classList.remove('pop'), 120); }
+    updateCounter();
+  });
+}
+
+document.getElementById('ctr-minus')?.addEventListener('click', () => { if (ctrCount > 0) { ctrCount--; updateCounter(); } });
+document.getElementById('ctr-reset')?.addEventListener('click', () => { ctrCount = 0; updateCounter(); });
+document.getElementById('ctr-add10')?.addEventListener('click', () => { ctrCount += 10; updateCounter(); });
+
+document.querySelectorAll('.counter-pre-btn').forEach(btn => {
+  btn.addEventListener('click', () => loadCounterPreset(btn));
+});
+document.querySelectorAll('.counter-preset-card').forEach(card => {
+  card.addEventListener('click', () => {
+    // switch to counter tab
+    document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.t === 'counter'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.toggle('on', p.id === 'p-counter'));
+    loadCounterPreset(card);
+  });
+});
+
+// ── QURAN ──
+const SURAHS = {
+  fatiha: {
+    num: 1, name: 'Al-Fatiha', ar: 'الْفَاتِحَة', meta: '7 ayahs · Makkiyya · The Opening',
+    note: 'Called "Ash-Shifa\'" (The Cure). Recite 7× in Ruqyah sessions — Bukhari 5736.',
+    playlist: "https://cdn.islamic.network/quran/audio/128/ar.alafasy/1.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/2.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/3.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/4.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/5.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/7.mp3",
+    firstSrc: "https://cdn.islamic.network/quran/audio/128/ar.alafasy/1.mp3",
+    ayahs: [
+      {n:1, ar:'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ', tr:'Bismi llāhi r-raḥmāni r-raḥīm', en:'"In the name of Allah, the Most Gracious, the Most Merciful."'},
+      {n:2, ar:'الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ', tr:'Al-ḥamdu lillāhi rabbi l-ʿālamīn', en:'"All praise is due to Allah, Lord of all the worlds."'},
+      {n:3, ar:'الرَّحْمَٰنِ الرَّحِيمِ', tr:'Ar-raḥmāni r-raḥīm', en:'"The Most Gracious, the Most Merciful."'},
+      {n:4, ar:'مَالِكِ يَوْمِ الدِّينِ', tr:'Māliki yawmi d-dīn', en:'"Master of the Day of Judgment."'},
+      {n:5, ar:'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ', tr:'Iyyāka naʿbudu wa-iyyāka nastaʿīn', en:'"You alone we worship, and You alone we ask for help."'},
+      {n:6, ar:'اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ', tr:'Ihdinā ṣ-ṣirāṭa l-mustaqīm', en:'"Guide us on the straight path."'},
+      {n:7, ar:'صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ', tr:'Ṣirāṭa lladhīna anʿamta ʿalayhim ġayri l-maġḍūbi ʿalayhim wa-lā ḍ-ḍāllīn', en:'"The path of those upon whom You have bestowed favor, not of those who have evoked Your anger or of those who are astray."'},
+    ]
+  },
+  baqarah255: {
+    num: '2:255', name: 'Ayat al-Kursi', ar: 'آيَةُ الْكُرْسِيّ', meta: 'The greatest verse — Al-Baqarah 2:255',
+    note: '"The greatest verse in the Quran" — Sahih Muslim 810. Recite after every prayer and before sleep.',
+    playlist: null, firstSrc: "https://cdn.islamic.network/quran/audio/128/ar.alafasy/262.mp3",
+    ayahs: [{n:255, ar:'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ', tr:'Allahu la ilaha illa Huwal-Hayyul-Qayyum. La ta\'khudhuhu sinatun wala nawm...', en:'"Allah — there is no deity except Him, the Ever-Living, the Sustainer of existence. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and whatever is on the earth. Who is it that can intercede with Him except by His permission? He knows what is before them and what will be after them, and they encompass not a thing of His knowledge except for what He wills. His Kursi extends over the heavens and the earth, and their preservation tires Him not. And He is the Most High, the Magnificent."'}]
+  },
+  baqarah285: {
+    num: '2:285–286', name: 'Seal of Al-Baqarah', ar: 'خَاتِمَة الْبَقَرَة', meta: 'Sufficient at night — Al-Baqarah 2:285–286',
+    note: '"Whoever recites the last two verses of Al-Baqarah at night, they will suffice him." — Bukhari 5009.',
+    playlist: "https://cdn.islamic.network/quran/audio/128/ar.alafasy/292.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/293.mp3", firstSrc: "https://cdn.islamic.network/quran/audio/128/ar.alafasy/292.mp3",
+    ayahs: [
+      {n:285, ar:'آمَنَ الرَّسُولُ بِمَا أُنزِلَ إِلَيْهِ مِن رَّبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِّن رُّسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ', tr:'Amana r-rasulu bima unzila ilayhi min rabbihi wal-mu\'minun...', en:'"The Messenger has believed in what was revealed to him from his Lord, and so have the believers. All of them have believed in Allah and His angels and His books and His messengers, saying: We make no distinction between any of His messengers. And they say: We hear and we obey. Grant us Your forgiveness, our Lord. And to You is the journey\'s end."'},
+      {n:286, ar:'لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا ۚ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ ۗ رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِن قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ ۖ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا ۚ أَنتَ مَوْلَانَا فَانصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ', tr:'La yukallifullahu nafsan illa wus\'aha...', en:'"Allah does not burden a soul beyond that it can bear. It will have what it has earned, and upon it what it has incurred. Our Lord, do not impose blame upon us if we forget or make an error. Our Lord, lay not upon us a burden like that which You laid upon those before us. Our Lord, burden us not with that which we have no ability to bear. And pardon us; and forgive us; and have mercy upon us. You are our protector, so give us victory over the disbelieving people."'},
+    ]
+  },
+  ikhlas: {
+    num: 112, name: 'Al-Ikhlas', ar: 'الْإِخْلَاص', meta: '4 ayahs · Worth ⅓ of Quran — Bukhari 5013',
+    note: 'Recite 3× morning and evening, and 3× in Ruqyah. Equal in reward to reciting one-third of the Quran.',
+    playlist: "https://cdn.islamic.network/quran/audio/128/ar.alafasy/6222.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6223.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6224.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6225.mp3", firstSrc: "https://cdn.islamic.network/quran/audio/128/ar.alafasy/6222.mp3",
+    ayahs: [
+      {n:1, ar:'قُلْ هُوَ اللَّهُ أَحَدٌ', tr:'Qul Huwa llāhu aḥad', en:'"Say: He is Allah, One."'},
+      {n:2, ar:'اللَّهُ الصَّمَدُ', tr:'Allāhu ṣ-ṣamad', en:'"Allah, the Eternal, Absolute."'},
+      {n:3, ar:'لَمْ يَلِدْ وَلَمْ يُولَدْ', tr:'Lam yalid wa-lam yūlad', en:'"He neither begets nor was begotten."'},
+      {n:4, ar:'وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ', tr:'Wa-lam yakun lahū kufuwan aḥad', en:'"And there is none comparable to Him."'},
+    ]
+  },
+  falaq: {
+    num: 113, name: 'Al-Falaq', ar: 'الْفَلَق', meta: '5 ayahs · Refuge from sihr & ayn',
+    note: 'Specifically names those who blow on knots (sihr) and enviers (hasad). Essential for Ruqyah.',
+    playlist: "https://cdn.islamic.network/quran/audio/128/ar.alafasy/6226.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6227.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6228.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6229.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6230.mp3", firstSrc: "https://cdn.islamic.network/quran/audio/128/ar.alafasy/6226.mp3",
+    ayahs: [
+      {n:1, ar:'قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ', tr:'Qul aʿūdhu bi-rabbi l-falaq', en:'"Say: I seek refuge in the Lord of the daybreak."'},
+      {n:2, ar:'مِنْ شَرِّ مَا خَلَقَ', tr:'Min sharri mā khalaq', en:'"From the evil of that which He created."'},
+      {n:3, ar:'وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ', tr:'Wa-min sharri ġāsiqin idhā waqab', en:'"And from the evil of darkness when it settles."'},
+      {n:4, ar:'وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ', tr:'Wa-min sharri n-naffāthāti fi l-ʿuqad', en:'"And from the evil of those who blow on knots."'},
+      {n:5, ar:'وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ', tr:'Wa-min sharri ḥāsidin idhā ḥasad', en:'"And from the evil of an envier when he envies."'},
+    ]
+  },
+  nas: {
+    num: 114, name: 'An-Nas', ar: 'النَّاس', meta: '6 ayahs · Refuge from the whisperer',
+    note: 'Seeks refuge from Al-Waswas Al-Khannas — the whisperer who retreats — from jinn and humans.',
+    playlist: "https://cdn.islamic.network/quran/audio/128/ar.alafasy/6231.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6232.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6233.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6234.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6235.mp3,https://cdn.islamic.network/quran/audio/128/ar.alafasy/6236.mp3", firstSrc: "https://cdn.islamic.network/quran/audio/128/ar.alafasy/6231.mp3",
+    ayahs: [
+      {n:1, ar:'قُلْ أَعُوذُ بِرَبِّ النَّاسِ', tr:'Qul aʿūdhu bi-rabbi n-nās', en:'"Say: I seek refuge in the Lord of mankind."'},
+      {n:2, ar:'مَلِكِ النَّاسِ', tr:'Maliki n-nās', en:'"The Sovereign of mankind."'},
+      {n:3, ar:'إِلَٰهِ النَّاسِ', tr:'Ilāhi n-nās', en:'"The God of mankind."'},
+      {n:4, ar:'مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ', tr:'Min sharri l-waswāsi l-khannās', en:'"From the evil of the retreating whisperer."'},
+      {n:5, ar:'الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ', tr:'Alladhī yuwaswisu fī ṣudūri n-nās', en:'"Who whispers in the breasts of mankind."'},
+      {n:6, ar:'مِنَ الْجِنَّةِ وَالنَّاسِ', tr:'Mina l-jinnati wa-n-nās', en:'"From among the jinn and mankind."'},
+    ]
+  }
+};
+
+function renderSurah(key) {
+  const S = SURAHS[key]; if (!S) return;
+  const list = document.getElementById('surah-list');
+  const view = document.getElementById('surah-view');
+  const content = document.getElementById('surah-view-content');
+  if (!list || !view || !content) return;
+  list.classList.add('hidden');
+  view.classList.add('open');
+  const audioHtml = S.firstSrc ? `<div class="audio-row${S.playlist ? ` data-playlist="${S.playlist}"` : ''}">
+    <div class="audio-row-head"><span class="audio-icon">🎙</span><span class="audio-label">Mishary Alafasy${S.playlist ? ' (auto-advances)' : ''}</span></div>
+    <audio class="audio-el" controls preload="none" src="${S.firstSrc}"></audio>
+  </div>` : '';
+  content.innerHTML = `
+    <div class="surah-view-title">${S.name} — ${S.ar}</div>
+    <div class="surah-view-meta">${S.meta}</div>
+    <div class="note" style="margin-bottom:18px;margin-top:0">${S.note}</div>
+    ${audioHtml}
+    <div style="margin-top:20px">
+      ${S.ayahs.map(a => `<div class="ayah-wrap">
+        <div class="ayah-num-tag">Ayah ${a.n}</div>
+        <div class="ayah-ar-text">${a.ar}</div>
+        <div class="ayah-tr-text">${a.tr}</div>
+        <div class="ayah-en-text">${a.en}</div>
+      </div>`).join('')}
+    </div>
+  `;
+  // re-init playlist on dynamically added audio
+  content.querySelectorAll('.audio-row[data-playlist]').forEach(row => {
+    const urls = row.dataset.playlist.split(',');
+    const audio = row.querySelector('audio.audio-el');
+    if (!audio) return;
+    let idx = 0;
+    audio.addEventListener('play', () => { audio.playbackRate = audioSpeed; });
+    audio.addEventListener('ended', () => {
+      idx = (idx + 1) % urls.length;
+      if (idx > 0) { audio.src = urls[idx]; audio.play(); } else { audio.src = urls[0]; }
+    });
+  });
+  content.querySelectorAll('audio.audio-el').forEach(a => {
+    a.addEventListener('play', () => { a.playbackRate = audioSpeed; });
+  });
+}
+
+document.querySelectorAll('.surah-row-btn').forEach(btn => {
+  btn.addEventListener('click', () => renderSurah(btn.dataset.surah));
+});
+
+document.getElementById('surah-back')?.addEventListener('click', () => {
+  document.getElementById('surah-list')?.classList.remove('hidden');
+  document.getElementById('surah-view')?.classList.remove('open');
+});
+
+// ── RAAQIS FILTER ──
+document.querySelectorAll('.raaqi-filt-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.raaqi-filt-btn').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('#raaqi-list .raaqi-card').forEach(card => {
+      card.style.display = (f === 'all' || (card.dataset.tags || '').includes(f)) ? '' : 'none';
+    });
+  });
+});
+
+
+// ════════════════════════════════════════════
+// THEME TOGGLE
+// ════════════════════════════════════════════
+(function(){
+  const btn = document.getElementById('theme-toggle');
+  const saved = localStorage.getItem('rq-theme');
+  const sys = window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+  const theme = saved || sys;
+  document.documentElement.setAttribute('data-theme', theme);
+  if(btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+  if(btn) btn.addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('rq-theme', next);
+    btn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+})();
+
+// ════════════════════════════════════════════
+// DAILY HADITH
+// ════════════════════════════════════════════
+const HADITHS = [
+  {t:"The Prophet ﷺ said: 'Whoever recites Ayat al-Kursi after every obligatory prayer, nothing prevents him from entering Paradise except death.'",s:"Al-Nasaʼi — Authenticated by al-Albani"},
+  {t:"The Prophet ﷺ said: 'There is no disease that Allah has created, except that He also has created its treatment.'",s:"Sahih Bukhari 5678"},
+  {t:"Ibn Masʻud said: 'Al-Muʻawwidhat (Al-Falaq & An-Nas) were not revealed as part of the Quran' — but Ibn Abbas and the majority held they ARE Quran. The Prophet ﷺ recited them and said: “They are sufficient for you against all things.”",s:"Abu Dawud 5082 · Al-Hakim"},
+  {t:"The Prophet ﷺ said about Surah Al-Baqarah: 'Do not turn your homes into graves. Shaytan flees from the house in which Surah Al-Baqarah is recited.'",s:"Sahih Muslim 780"},
+  {t:"The Prophet ﷺ said: 'The evil eye is real. If anything could precede the decree (qadar), it would be the evil eye. When you wash yourself, wash completely.'",s:"Sahih Muslim 2188"},
+  {t:"The Prophet ﷺ said: 'Whoever says SubhanAllahi wa bihamdihi 100 times in the morning and evening, no one will come on the Day of Resurrection with anything better — except one who said more.'",s:"Sahih Muslim 2692"},
+  {t:"The Prophet ﷺ said: 'The one who recites Quran and is proficient in it will be with the noble, obedient scribes (the angels). The one who recites it with difficulty, stammering through it, will have double the reward.'",s:"Sahih Bukhari 4937 · Muslim 798"},
+  {t:"Aisha reported: 'When the Prophet ﷺ went to sleep, he would blow into his cupped hands, recite Al-Ikhlas and the two Muʻawwidhat, then wipe his face and body as far as his hands could reach.'",s:"Sahih Bukhari 5017"},
+  {t:"The Prophet ﷺ said: 'Jibreel performed Ruqyah on me saying: Bismillahi arqika, min kulli shayʻin yuʽhika, min sharri kulli nafsin aw ʻayni hasid — Allah will heal you.'",s:"Sahih Muslim 2186"},
+  {t:"The Prophet ﷺ said: 'Guard the five prayers. Whoever guards them, they will be a light, a proof, and a salvation for him on the Day of Resurrection.'",s:"Musnad Ahmad — Authenticated by al-Albani"},
+  {t:"The Prophet ﷺ said: 'Should I not tell you something that will erase sins and raise your ranks? Completing wudu when you dislike it, many steps to the masjid, waiting for the next prayer after a prayer. That is ribat (guarding the frontier).'",s:"Sahih Muslim 251"},
+  {t:"Aisha said: 'Whoever learns the Quran by heart and keeps it, Allah elevates him through it and lowers those who neglect it.'",s:"Sahih Bukhari 5027"},
+  {t:"The Prophet ﷺ said: 'The duaa between the adhan and the iqamah is not rejected.'",s:"Abu Dawud 521 · Tirmidhi 212"},
+  {t:"Ibn al-Qayyim said: 'Ruqyah and amulets — the only permitted ones are: (1) Quran, (2) known and understood words, (3) believing they have no effect by themselves, only by Allah.'",s:"Zad al-Maʻad vol. 4"},
+  {t:"The Prophet ﷺ said: 'Whoever says in the morning and evening: Hasbiyallahu la ilaha illa huwa ʻAlayhi tawakkaltu wa huwa Rabbul ʻarshil ʻAdhim — seven times — Allah will take care of his worldly and afterlife concerns.'",s:"Abu Dawud 5081 · Ibn al-Sunni"},
+  {t:"The Prophet ﷺ said: 'Whoever prays Fajr is under the protection of Allah. So do not betray the protection of Allah, lest He throw you on your face into the Fire.'",s:"Sahih Muslim 657"},
+  {t:"The Prophet ﷺ said: 'Sihr (magic) is real. And what treats sihr is (more) sihr—meaning permissible Ruqyah.’",s:"Sahih Bukhari 5765"},
+  {t:"The Prophet ﷺ said: 'Whoever recites the last two ayahs of Surah Al-Baqarah at night, they will suffice him (as protection).'",s:"Sahih Bukhari 5051"},
+  {t:"The Prophet ﷺ said: 'There is a surah in the Quran of thirty ayahs that will intercede for a man until he is forgiven. It is: Tabarak-alladhi bi-yadihil-Mulk (Surah Al-Mulk).'",s:"Abu Dawud 1400 · Tirmidhi 2891"},
+  {t:"The Prophet ﷺ said: 'Say SubhanAllah 33 times, Alhamdulillah 33 times, and Allahu Akbar 34 times — that is one hundred. It is better for you than having a servant.'",s:"Sahih Bukhari 6318"},
+  {t:"The Prophet ﷺ said: 'The word of Allah is the highest. The word of Shaytan is the lowest. Know that you are between two guards: the word of the Muadhdhin and the Iqamah.'",s:"Related concepts in Sahih al-Bukhari"},
+  {t:"Abu Hurairah said: 'The Prophet ﷺ appointed me to guard the Zakat of Ramadan. A man came and grabbed the dates. I caught him. He said: teach me words that benefit me. He taught me Ayat al-Kursi.'",s:"Sahih Bukhari 2311"},
+  {t:"The Prophet ﷺ said: 'Whoever says La ilaha illallah wahdahu la sharika lah, lahul mulku wa lahul hamdu wa huwa ʻala kulli shayʻin qadir — 100 times a day has the reward of freeing 10 slaves, 100 good deeds, and protection from Shaytan.'",s:"Sahih Bukhari 3293"},
+  {t:"The Prophet ﷺ said: 'Make use of the two cures: honey and the Quran.'",s:"Ibn Majah 3452 · Ibn al-Qayyim, Zad al-Maʻad"},
+  {t:"The Prophet ﷺ said: 'Whoever performs ablution (wudu) perfectly, his sins will come out from his body, even from under his nails.'",s:"Sahih Muslim 245"},
+  {t:"The Prophet ﷺ said: 'On the night I was taken on the Night Journey (Isra), I saw Ibrahim ʻalayhis salam. He said: O Muhammad, give my greetings to your Ummah, and tell them that Jannah’s soil is pure, water is sweet, and it is flat plains — and its plantings are SubhanAllah, Alhamdulillah, La ilaha illallah, Allahu Akbar.'",s:"Tirmidhi 3462 · Authenticated"},
+  {t:"The Prophet ﷺ said: 'Dua IS worship.'",s:"Tirmidhi 2969 · Abu Dawud 1479"},
+  {t:"The Prophet ﷺ said: 'A Muslim does not suffer any worry, grief, pain or sadness — even the prick of a thorn — except that Allah expiates some of his sins.'",s:"Sahih Bukhari 5641"},
+  {t:"The Prophet ﷺ said: 'The strong believer is better and more beloved to Allah than the weak believer, though both are good. Be keen on what benefits you, seek help from Allah, and do not feel helpless.'",s:"Sahih Muslim 2664"},
+  {t:"The Prophet ﷺ said: 'When you say Bismillah, Shaytan becomes as small as a fly. When you forget it at the beginning of a meal, say: Bismillahi awwalahu wa akhirahu.'",s:"Abu Dawud 3767 · Tirmidhi 1858"}
+];
+(function(){
+  const d = new Date();
+  const day = Math.floor((d - new Date(d.getFullYear(),0,0)) / 86400000);
+  const h = HADITHS[day % HADITHS.length];
+  const el = document.getElementById('daily-hadith-text');
+  const src = document.getElementById('daily-hadith-src');
+  if(el) el.textContent = h.t;
+  if(src) src.textContent = h.s;
+})();
+
+// ════════════════════════════════════════════
+// ADHKAR DATABASE (100+)
+// ════════════════════════════════════════════
+const ADHKAR_DB = [
+  // MORNING
+  {name:"Ayat al-Kursi",ar:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ...",tr:"Allahu la ilaha illa Huwal-Hayyul-Qayyum...",en:"Allah — no deity except Him, the Ever-Living, the Sustainer. Whoever recites this after prayer: nothing prevents him from Paradise except death.",count:"1×",cats:["morning","evening","after_salah","sleep"],src:"Bukhari 2311 · Nasaʼi"},
+  {name:"Al-Ikhlas (Morning)",ar:"قُلْ هُوَ اللَّهُ أَحَدٌ",tr:"Qul huwa Allahu ahad...",en:"Say: He is Allah, the One. Recite 3× morning and evening.",count:"3×",cats:["morning","evening"],src:"Abu Dawud 5082"},
+  {name:"Al-Falaq (Morning)",ar:"قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",tr:"Qul aʻdhu birabbil-falaq...",en:"Say: I seek refuge in the Lord of daybreak. Protects from sihr, ayn, and evil.",count:"3×",cats:["morning","evening"],src:"Abu Dawud 5082"},
+  {name:"An-Nas (Morning)",ar:"قُلْ أَعُوذُ بِرَبِّ النَّاسِ",tr:"Qul aʻdhu birabbin-nas...",en:"Say: I seek refuge in the Lord of mankind — protects from whispers of Shaytan.",count:"3×",cats:["morning","evening"],src:"Abu Dawud 5082"},
+  {name:"Asbahna — Morning Dhikr",ar:"أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ",tr:"Asbahna wa asbahal-mulku lillah, wal-hamdu lillah...",en:"We have entered the morning and dominion belongs to Allah. Praise be to Allah, there is no deity except Allah alone...",count:"1×",cats:["morning"],src:"Muslim 2723"},
+  {name:"Hasbiyallah (Morning)",ar:"حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",tr:"Hasbiyallahu la ilaha illa huwa, ʻAlayhi tawakkaltu, wa huwa Rabbul ʻarshil ʻAdhim.",en:"Allah is sufficient for me. There is no deity except Him. Upon Him I rely, and He is the Lord of the Magnificent Throne.",count:"7×",cats:["morning","evening"],src:"Abu Dawud 5081"},
+  {name:"Aʻidhu Bikalimatillah (Morning)",ar:"أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",tr:"Aʻdhu bikalimatillahit-tammati min sharri ma khalaq.",en:"I seek refuge in the perfect words of Allah from the evil of what He has created.",count:"3×",cats:["morning","evening"],src:"Muslim 2709"},
+  {name:"Bismillah Protection",ar:"بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ",tr:"Bismillahil-ladhi la yadurru maʻas-mihi shayʻn fil-ardi wa la fis-samaʼi wa huwas-samiʻul-ʻalim.",en:"In the name of Allah, with whose name nothing on earth or in heaven can cause harm. He is the All-Hearing, All-Knowing.",count:"3×",cats:["morning","evening"],src:"Abu Dawud 5088 · Tirmidhi 3388"},
+  {name:"Sayyid al-Istighfar",ar:"اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ خَلَقْتَنِي",tr:"Allahumma anta rabbi, la ilaha illa anta, khalaqtani wa ana ʻabduk...",en:"The Master Seeking of Forgiveness — the best istighfar. Whoever says it by day with firm belief and dies before evening will be among the people of Paradise.",count:"1×",cats:["morning","evening"],src:"Bukhari 6306"},
+  {name:"SubhanAllah wa bihamdihi (Morning)",ar:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",tr:"SubhanAllahi wa bihamdihi.",en:"Whoever says this 100 times in the morning and evening, no one will come on the Day of Resurrection with better deeds — except one who said more.",count:"100×",cats:["morning","evening"],src:"Muslim 2692"},
+  {name:"La ilaha illallah (Morning)",ar:"لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ",tr:"La ilaha illallahu wahdahu la sharika lah, lahul mulku wa lahul hamdu wa huwa ʻala kulli shayʻin qadir.",en:"None has the right to be worshipped but Allah alone, no partner. For Him is dominion and all praise. He is able over all things.",count:"100×",cats:["morning"],src:"Bukhari 3293"},
+  {name:"Morning Wind / Weather Dua",ar:"اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَهَا وَخَيْرَ مَا أُرْسِلَتْ بِهِ",tr:"Allahumma inni asʻaluka khairaha wa khayra ma ursilat bih...",en:"O Allah, I ask You for its goodness and the goodness of what it has been sent with. (Said when wind blows.)",count:"1×",cats:["morning","general"],src:"Muslim 899"},
+  {name:"Dua of Protection (Morning)",ar:"اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي",tr:"Allahumma ʻafini fi badani, Allahumma ʻafini fi samʻi, Allahumma ʻafini fi basari.",en:"O Allah, grant my body health. O Allah, grant my hearing health. O Allah, grant my eyesight health.",count:"3×",cats:["morning","evening"],src:"Abu Dawud 5090"},
+  // EVENING
+  {name:"Amsayna — Evening Dhikr",ar:"أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ",tr:"Amsayna wa amsal-mulku lillah, wal-hamdu lillah...",en:"We have entered the evening and dominion belongs to Allah. Praise be to Allah...",count:"1×",cats:["evening"],src:"Muslim 2723"},
+  {name:"Evening Protection Dua",ar:"أَعُوذُ بِاللَّهِ السَّمِيعِ الْعَلِيمِ مِنَ الشَّيْطَانِ الرَّجِيمِ",tr:"Aʻdhu billahis-samiʻil ʻalimi minash-shaytanir-rajim.",en:"I seek refuge in Allah, the All-Hearing, All-Knowing, from the accursed Shaytan.",count:"3×",cats:["evening","general"],src:"Abu Dawud · Tirmidhi"},
+  {name:"Evening - Last 2 Verses of Al-Baqarah",ar:"آمَنَ الرَّسُولُ بِمَا أُنزِلَ إِلَيْهِ مِن رَّبِّهِ...",tr:"Amanar-rasulu bima unzila ilayhi mir-rabbih...",en:"Whoever recites the last two ayahs of Surah Al-Baqarah at night, they will suffice him.",count:"1×",cats:["evening","sleep"],src:"Bukhari 5051"},
+  {name:"Bismika — Evening",ar:"بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي",tr:"Bismika Rabbi wadaʻtu janbi wa bika arfaʻuh...",en:"In Your name, my Lord, I lay down my side. If You take my soul, have mercy on it. If You return it, protect it as You protect Your righteous servants.",count:"1×",cats:["evening","sleep"],src:"Bukhari 6320"},
+  // SLEEP
+  {name:"Before Sleep — Tasbih",ar:"سُبْحَانَ اللَّهِ ٣٣ اَلْحَمْدُ لِلَّهِ ٣٣ اللَّهُ أَكْبَرُ ٣٤",tr:"SubhanAllah 33×, Alhamdulillah 33×, Allahu Akbar 34×",en:"The Prophet ﷺ said: this is better for you than having a servant.",count:"33/33/34",cats:["sleep"],src:"Bukhari 6318"},
+  {name:"Allahuma Aslamtu (Sleep)",ar:"اللَّهُمَّ أَسْلَمْتُ نَفْسِي إِلَيْكَ",tr:"Allahumma aslamtu nafsi ilayk, wa fawwadtu amri ilayk...",en:"O Allah, I have submitted myself to You, and entrusted my affairs to You. There is no refuge and no escape from You except with You.",count:"1×",cats:["sleep"],src:"Bukhari 247"},
+  {name:"Surah Al-Mulk (Before Sleep)",ar:"تَبَارَكَ الَّذِي بِيَدِهِ الْمُلْكُ",tr:"Tabarakal-ladhi biyadihil-mulk...",en:"Surah Al-Mulk intercedes for its reciter until he is forgiven.",count:"1×",cats:["sleep"],src:"Tirmidhi 2891"},
+  {name:"Blow on Hands (Sleep)",ar:"قُلْ هُوَ اللَّهُ أَحَدٌ ✕3 وَالْمُعَوِّذَتَيْن",tr:"Recite Al-Ikhlas, Al-Falaq, An-Nas 3× each into cupped hands, then wipe from face to body.",en:"The Prophet ﷺ did this every night before sleeping — a full body protection.",count:"3×",cats:["sleep"],src:"Bukhari 5017"},
+  // AFTER SALAH
+  {name:"Astaghfirullah (After Salah)",ar:"أَسْتَغْفِرُ اللَّهَ",tr:"Astaghfirullah (3×), then: Allahumma antas-salam wa minkas-salam, tabarakta ya dhal-jalali wal-ikram.",en:"I seek forgiveness from Allah. O Allah, You are Peace and from You is peace. Blessed are You, O Owner of Majesty and Honor.",count:"3×",cats:["after_salah"],src:"Muslim 591"},
+  {name:"SubhanAllah, Alhamdulillah, Allahu Akbar",ar:"سُبْحَانَ اللَّهِ ٣٣ اَلْحَمْدُ لِلَّهِ ٣٣ اللَّهُ أَكْبَرُ ٣٣",tr:"SubhanAllah 33× / Alhamdulillah 33× / Allahu Akbar 33× / La ilaha illallahu wahdahu...",en:"Whoever says this after each prayer will be forgiven even if his sins were like the foam of the sea.",count:"33/33/33",cats:["after_salah"],src:"Muslim 597"},
+  {name:"La ilaha illallah wahdahu (After Salah)",ar:"لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ",tr:"La ilaha illallahu wahdahu la sharika lah...",en:"None has the right to be worshipped but Allah alone, who has no partner. His is the dominion and for Him is all praise. He is Able to do all things.",count:"1×",cats:["after_salah"],src:"Bukhari 844"},
+  {name:"Allahuma la maniʻa (After Salah)",ar:"اللَّهُمَّ لَا مَانِعَ لِمَا أَعْطَيْتَ",tr:"Allahumma la maniʻa lima aʻtayt, wa la muʻti lima manaʻt, wa la yanfaʻu dhal-jaddi minkal-jadd.",en:"O Allah, none can withhold what You give, none can give what You withhold, and the fortune of the fortunate cannot protect against You.",count:"1×",cats:["after_salah"],src:"Bukhari 844"},
+  // GENERAL
+  {name:"La hawla wala quwwata",ar:"لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",tr:"La hawla wala quwwata illa billah.",en:"There is no might nor power except with Allah. One of the treasures of Paradise.",count:"As needed",cats:["general"],src:"Bukhari 7386"},
+  {name:"Hasbunallah wa niʻal-wakeel",ar:"حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",tr:"Hasbunallahu wa niʻmal-wakeel.",en:"Allah is sufficient for us and He is the best Disposer of affairs. Ibrahim said this when thrown in fire; Muhammad © said it at Uhud.",count:"As needed",cats:["general"],src:"Bukhari 4563 · Quran 3:173"},
+  {name:"Dua Yunus (Distress)",ar:"لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ",tr:"La ilaha illa anta subhanaka inni kuntu minaz-zalimin.",en:"None has the right to be worshipped but You, exalted are You. Indeed I have been of the wrongdoers. (Dua of Yunus in the whale.)",count:"As needed",cats:["general"],src:"Tirmidhi 3505 · Quran 21:87"},
+  {name:"Ya Hayyu Ya Qayyum",ar:"يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ",tr:"Ya Hayyu Ya Qayyum, birahmatika astaghith, aslih li shaʻni kullahu wa la takilni ila nafsi tarfata ʻayn.",en:"O Ever-Living, O Eternal Sustainer, by Your mercy I seek relief. Set right all my affairs and do not leave me to myself even for the blink of an eye.",count:"As needed",cats:["general"],src:"Hakim · Authenticated"},
+  {name:"Istighfar (General)",ar:"أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ",tr:"Astaghfirullaha wa atubu ilayh.",en:"I seek the forgiveness of Allah and I repent to Him. The Prophet ﷺ said this 100+ times a day.",count:"100×",cats:["general"],src:"Bukhari 6307"},
+  {name:"Salawat (Darood Ibrahim)",ar:"اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ وَعَلَىٰ آلِ مُحَمَّدٍ",tr:"Allahumma salli ʻala Muhammad wa ʻala ali Muhammad...",en:"Whoever sends blessings on me once, Allah sends 10 blessings on him and forgives 10 sins.",count:"10×+",cats:["general","after_salah"],src:"Muslim 408"},
+  {name:"SubhanAllah (General)",ar:"سُبْحَانَ اللَّهِ",tr:"SubhanAllah",en:"Glory be to Allah. One of the most beloved words to Allah — light on the tongue, heavy on the scales.",count:"33×",cats:["general"],src:"Bukhari 6406"},
+  {name:"Alhamdulillah",ar:"اَلْحَمْدُ لِلَّهِ",tr:"Alhamdulillah",en:"Praise be to Allah. Fills the scale of good deeds.",count:"33×",cats:["general"],src:"Muslim 223"},
+  {name:"Allahu Akbar",ar:"اللَّهُ أَكْبَرُ",tr:"Allahu Akbar",en:"Allah is the Greatest.",count:"34×",cats:["general","after_salah"],src:"Muslim 597"},
+  // TRAVEL
+  {name:"Dua for Riding / Vehicle",ar:"سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَٰذَا",tr:"SubHanal-ladhi sakhkhara lana hadha wa ma kunna lahu muqrinin wa inna ila rabbina lamunqalibun.",en:"Glory be to He who subjected this to us, for we could not have subdued it. And indeed, to our Lord we will return.",count:"1×",cats:["travel"],src:"Abu Dawud 2602 · Quran 43:13"},
+  {name:"Dua Leaving Home",ar:"بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ",tr:"Bismillahi, tawakkaltu ʻalallah, wa la hawla wa la quwwata illa billah.",en:"In the name of Allah, I trust in Allah, and there is no might and no power except with Allah.",count:"1×",cats:["travel","general"],src:"Abu Dawud 5095 · Tirmidhi 3426"},
+  {name:"Entering a New Town",ar:"اللَّهُمَّ رَبَّ السَّمَاوَاتِ السَّبْعِ",tr:"Allahumma rabbas-samawatis-sabʻ wa ma azlalna, wa rabbal-aradinas-sabʻ...",en:"O Allah, Lord of the seven heavens and what they shade... I seek refuge in You from the evil of this town and from the evil of its inhabitants.",count:"1×",cats:["travel"],src:"Ibn al-Sunni · Abu Dawud"},
+  // FOOD
+  {name:"Bismillah Before Eating",ar:"بِسْمِ اللَّهِ",tr:"Bismillah.",en:"In the name of Allah. Shaytan cannot share the meal when Bismillah is said.",count:"1×",cats:["food"],src:"Muslim 2017"},
+  {name:"After Eating",ar:"اَلْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَٰذَا",tr:"Alhamdulillahil-ladhi atʻamanī hadha wa razaqanihi min ghayri hawlin minni wa la quwwah.",en:"Praise be to Allah who has fed me this and provided it for me without any power or might from myself.",count:"1×",cats:["food"],src:"Abu Dawud 4023 · Tirmidhi 3458"},
+  {name:"Forgot Bismillah While Eating",ar:"بِسْمِ اللَّهِ أَوَّلَهُ وَآخِرَهُ",tr:"Bismillahi awwalahu wa akhirah.",en:"In the name of Allah at its beginning and at its end. Say this if you forgot Bismillah at the start.",count:"1×",cats:["food"],src:"Abu Dawud 3767"}
+];
+
+let adhkarCat = 'all';
+function setAdhkarCat(btn){
+  document.querySelectorAll('#adhkar-cats .cat-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  adhkarCat = btn.dataset.cat;
+  searchAdhkar();
+}
+function searchAdhkar(){
+  const q = (document.getElementById('adhkar-search')?.value || '').toLowerCase();
+  const res = ADHKAR_DB.filter(d => {
+    const mc = adhkarCat === 'all' || d.cats.includes(adhkarCat);
+    const mq = !q || d.name.toLowerCase().includes(q) || d.en.toLowerCase().includes(q) || (d.tr||'').toLowerCase().includes(q);
+    return mc && mq;
+  });
+  const el = document.getElementById('adhkar-results');
+  if(!el) return;
+  if(!res.length){ el.innerHTML='<div class="search-empty">No adhkar found. Try a different search.</div>'; return; }
+  el.innerHTML = res.map(d => `<div class="dhikr-card">
+    <div class="dhikr-name">${d.name}<span class="dhikr-count">${d.count}</span></div>
+    ${d.ar?`<div class="dhikr-ar">${d.ar}</div>`:''}
+    ${d.tr?`<div class="dhikr-tr">${d.tr}</div>`:''}
+    <div class="dhikr-en">${d.en}</div>
+    <div class="dhikr-src">${d.src}</div>
+  </div>`).join('');
+}
+// init adhkar on load
+document.addEventListener('DOMContentLoaded', searchAdhkar);
+setTimeout(searchAdhkar, 100);
+
+// ════════════════════════════════════════════
+// RUQYAH DATABASE
+// ════════════════════════════════════════════
+const RUQYAH_DB = [
+  // GENERAL
+  {name:"Al-Fatiha (Ruqyah)",ar:"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ...",tr:"Bismillahir-rahmanir-raheem. Alhamdulillahi rabbil-ʻalamin...",en:"Al-Fatiha is called Ash-Shifa (The Cure). A companion recited it 7× over a scorpion sting victim and he was healed. Recite 7×.",count:"7×",cats:["general","self","pain"],src:"Bukhari 5736"},
+  {name:"Ayat al-Kursi (Ruqyah)",ar:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ...",tr:"Allahu la ilaha illa Huwal-Hayyul-Qayyum...",en:"The greatest verse in the Quran. Recite over the afflicted person while touching their forehead or the place of pain.",count:"3×",cats:["general","ayn","jinn","self"],src:"Muslim 810 · Bukhari 3275"},
+  {name:"Al-Ikhlas (Ruqyah)",ar:"قُلْ هُوَ اللَّهُ أَحَدٌ...",tr:"Qul huwa Allahu Ahad...",en:"Worth 1/3 of the Quran. Part of the Muʻawwidhat — recite 3× blowing onto hands, wipe the body.",count:"3×",cats:["general","ayn","sihr","self"],src:"Bukhari 5017 · Abu Dawud 5082"},
+  {name:"Al-Falaq (Ruqyah)",ar:"قُلْ أَعُوذُ بِرَبِّ الْفَلَق...",tr:"Qul aʻdhu birabbil-falaq...",en:"Verse 4: “from the evil of those who blow on knots” — direct reference to sihr. Recite 3× into hands, wipe body.",count:"3×",cats:["general","sihr","ayn","self"],src:"Bukhari 5017 · Muslim"},
+  {name:"An-Nas (Ruqyah)",ar:"قُلْ أَعُوذُ بِرَبِّ النَّاسِ...",tr:"Qul aʻdhu birabbin-nas...",en:"Protects from whispers of men and jinn. The Prophet ﷺ recited it with Al-Falaq and Al-Ikhlas for self-ruqyah.",count:"3×",cats:["general","jinn","self"],src:"Bukhari 5017"},
+  // JIBREEL RUQYAH
+  {name:"Ruqyah of Jibreel",ar:"بِسْمِ اللَّهِ أَرْقِيكَ مِنْ كُلِّ شَيْءٍ يُؤْذِيكَ",tr:"Bismillahi arqik, min kulli shayʻin yuʽhik, min sharri kulli nafsin aw ʻayni hasid, Allahu yashfik, bismillahi arqik.",en:"In the name of Allah I perform Ruqyah on you, from everything that harms you, from the evil of every soul and envious eye. May Allah cure you.",count:"3×",cats:["general","ayn","pain"],src:"Muslim 2186"},
+  {name:"Ruqyah for Pain (Wadʻ al-Yad)",ar:"بِسْمِ اللَّهِ، أَعُوذُ بِعِزَّةِ اللَّهِ وَقُدْرَتِهِ مِنْ شَرِّ مَا أَجِدُ وَأُحَاذِرُ",tr:"Bismillah, aʻdhu biʻizzatillahi wa qudratihi min sharri ma ajidu wa uhadhir.",en:"In the name of Allah, I seek refuge in Allah’s might and power from the evil of what I feel and what I fear. (Place hand on pain and say this 7×.)",count:"7×",cats:["pain","self","general"],src:"Muslim 2202"},
+  // EVIL EYE (AYN)
+  {name:"Ruqyah for Ayn (Full)",ar:"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",tr:"Recite: Al-Fatiha 7×, Ayat al-Kursi 3×, Al-Ikhlas 3×, Al-Falaq 3×, An-Nas 3×. Blow into water and wash the afflicted person.",en:"The complete evil-eye Ruqyah protocol. Also include washing water from the wudu of the person who gave the ayn.",count:"Full session",cats:["ayn"],src:"Bukhari 5738 · Abu Dawud 3880"},
+  {name:"The Eye-Blowing Dua",ar:"أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ وَمِنْ كُلِّ عَيْنٍ لَامَّةٍ",tr:"Uʻidhu bikalimatiʼlahiʼt-tammati min kulli shaytanin wa hammatin wa min kulli ʻayni lammah.",en:"I seek refuge in the perfect words of Allah from every devil, pest, and harmful eye. Ibrahim said this for Ismaʻil and Ishaq.",count:"1×",cats:["ayn","general"],src:"Bukhari 3371"},
+  {name:"When Impressed (to prevent ayn)",ar:"اللَّهُمَّ بَارِكْ عَلَيْهِ",tr:"Allahumma barik ʻalayh.",en:"O Allah, bless him/her. Say this whenever you see something you admire — your own praise can transmit ayn.",count:"1×",cats:["ayn"],src:"Nasaʼi 10981 · Sahih"},
+  {name:"Ma shaʻAllah Protection",ar:"مَا شَاءَ اللَّهُ لَا قُوَّةَ إِلَّا بِاللَّهِ",tr:"Ma shaʻAllahu la quwwata illa billah.",en:"What Allah wills, there is no power except with Allah. Say when seeing your own blessings — severs the channel of self-ayn.",count:"1×",cats:["ayn"],src:"Quran 18:39"},
+  // SIHR
+  {name:"Sihr Treatment — Sidr Water",ar:"أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ",tr:"Recite over 7 Sidr (lote tree) leaves crushed in water: Al-Baqarah 2:102, Al-Aʻraf 7:117-119, Yunus 10:79-82, Ta-Ha 20:65-70. Drink and wash with it.",en:"The prophetic treatment for sihr attributed to Ibn Abbas. Confirmed by Ibn Taymiyyah and Ibn al-Qayyim.",count:"Session",cats:["sihr"],src:"Ibn Taymiyyah, Majmuʻ al-Fatawa vol.19"},
+  {name:"Al-Baqarah 2:102 (Anti-Sihr)",ar:"وَاتَّبَعُوا مَا تَتْلُو الشَّيَاطِينُ...",tr:"Wattabaʻu ma tatluʼs-shayatinu...",en:"They followed what the devils recited. And neither of the two angels taught anyone unless they said: We are a trial, so do not disbelieve. (Destroys sihr when recited.)",count:"3×",cats:["sihr"],src:"Quran 2:102 · Ibn Taymiyyah"},
+  {name:"Al-Aʻraf 7:117-119 (Moses vs Magicians)",ar:"وَأَوْحَيْنَا إِلَىٰ مُوسَىٰ أَنْ أَلْقِ عَصَاكَ...",tr:"Wa awhayna ila Musa an alqi ʻaSak...",en:"We inspired Moses: throw your staff. It swallowed their false display. So the truth was established and their work was made worthless.",count:"3×",cats:["sihr"],src:"Quran 7:117-119"},
+  // JINN
+  {name:"Al-Baqarah — Full Surah (Jinn Protection)",ar:"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ الم...",tr:"Bismillahir-rahmanir-raheem. Alif Lam Mim...",en:"Shaytan flees from the house in which Al-Baqarah is recited. It is the most powerful surah for repelling jinn — play it throughout the home.",count:"1×",cats:["jinn","sihr","general"],src:"Muslim 780"},
+  {name:"Adhan (for Jinn)",ar:"اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ...",tr:"Allahu Akbar, Allahu Akbar...",en:"The adhan drives Shaytan away: when the call to prayer is heard, he flees passing wind. (Recite adhan in affected rooms.)",count:"1×",cats:["jinn"],src:"Bukhari 608"},
+  {name:"Aʻdhu Billahi Minash-Shaytan",ar:"أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",tr:"Aʻdhu billahi minash-shaytanir-rajim.",en:"I seek refuge in Allah from the accursed Shaytan. The first line of Ruqyah for jinn possession.",count:"As needed",cats:["jinn","general"],src:"Quran 16:98"},
+  // SELF-RUQYAH
+  {name:"Self-Ruqyah Protocol",ar:"",tr:"",en:"Complete self-Ruqyah: (1) Wudu. (2) Al-Fatiha 7×. (3) Ayat al-Kursi 3×. (4) Al-Ikhlas, Al-Falaq, An-Nas 3× each with blowing. (5) Wadʻ al-yad (hand on pain) 7×. (6) Last 2 ayahs of Al-Baqarah 3×.",count:"Daily",cats:["self"],src:"Composite · Bukhari + Muslim"},
+  {name:"Reciting into Water (Self-Ruqyah)",ar:"",tr:"",en:"Recite Al-Fatiha, Ayat al-Kursi, Al-Ikhlas, Al-Falaq, An-Nas, and blow into a bottle of water. Drink 3 times daily for 40 days. Used for sihr and spiritual illness.",count:"Daily",cats:["self","sihr","ayn"],src:"Established practice · Ibn al-Qayyim"},
+  // PAIN
+  {name:"Dua of Uthman ibn Abi al-ʻAs",ar:"أَعُوذُ بِاللَّهِ وَقُدْرَتِهِ مِنْ شَرِّ مَا أَجِدُ وَأُحَاذِرُ",tr:"Aʻdhu billahi wa qudratihi min sharri ma ajidu wa uhadhir.",en:"I seek refuge in Allah and in His power from the evil of what I feel and what I fear. (Uthman reported severe pain was cured by this dua.)",count:"7×",cats:["pain","self"],src:"Muslim 2202"}
+];
+
+let ruqyahCat = 'all';
+function setRuqyahCat(btn){
+  document.querySelectorAll('#ruqyah-cats .cat-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  ruqyahCat = btn.dataset.cat;
+  searchRuqyah();
+}
+function searchRuqyah(){
+  const q = (document.getElementById('ruqyah-search')?.value || '').toLowerCase();
+  const res = RUQYAH_DB.filter(d => {
+    const mc = ruqyahCat === 'all' || d.cats.includes(ruqyahCat);
+    const mq = !q || d.name.toLowerCase().includes(q) || d.en.toLowerCase().includes(q);
+    return mc && mq;
+  });
+  const el = document.getElementById('ruqyah-results');
+  if(!el) return;
+  if(!res.length){ el.innerHTML='<div class="search-empty">No results found.</div>'; return; }
+  el.innerHTML = res.map(d => `<div class="dhikr-card">
+    <div class="dhikr-name">${d.name}<span class="dhikr-count">${d.count}</span></div>
+    ${d.ar?`<div class="dhikr-ar">${d.ar}</div>`:''}
+    ${d.tr?`<div class="dhikr-tr">${d.tr}</div>`:''}
+    <div class="dhikr-en">${d.en}</div>
+    <div class="dhikr-src">${d.src}</div>
+  </div>`).join('');
+}
+setTimeout(searchRuqyah, 100);
+
+// ════════════════════════════════════════════
+// LIFESTYLE ACTIVITIES
+// ════════════════════════════════════════════
+const LIFESTYLE = [
+  {icon:"🌅",name:"Waking Up",ar:"الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا",tr:"Alhamdulillahil-ladhi ahyana baʻda ma amatana wa ilayhin-nushur.",en:"All praise is for Allah who gave us life after killing us and unto Him is the resurrection. Start every day with gratitude.",src:"Bukhari 6312"},
+  {icon:"🚿",name:"Entering Bathroom",ar:"اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ",tr:"Allahumma inni aʻdhu bika minal-khubuti wal-khabaʻith.",en:"O Allah, I seek refuge with you from male and female devils. Say this before entering — it creates a shield.",src:"Bukhari 142"},
+  {icon:"✨",name:"Leaving Bathroom",ar:"غُفْرَانَكَ",tr:"Ghufranaka.",en:"I seek Your forgiveness. Said leaving the bathroom — the Prophet ﷺ always said this upon exiting.",src:"Abu Dawud 30 · Tirmidhi 7"},
+  {icon:"💧",name:"Making Wudu",ar:"بِسْمِ اللَّهِ",tr:"Bismillah. (Begin) ...Ashhadu an la ilaha illallahu wa ashhadu anna Muhammadan ʻabduhu wa rasuluh. (End)",en:"Begin with Bismillah. End: Allahumaʼlajʼalni minal-mutatahhirin... After wudu: whoever says the shahada enters all 8 gates of Jannah.",src:"Muslim 234 · Tirmidhi 55"},
+  {icon:"🤲",name:"Before Prayer",ar:"وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ",tr:"Wajjahtu wajhiya lil-ladhi fataras-samawati wal-ard, hanifan musliman wama ana minal-mushrikin.",en:"I turn my face toward the One who created the heavens and the earth, inclining to truth. (Opening dua of prayer — said silently after takbeer.)",src:"Muslim 771"},
+  {icon:"🙏",name:"After Prayer",ar:"أَسْتَغْفِرُ اللَّهَ، اللَّهُمَّ أَنْتَ السَّلَامُ",tr:"Astaghfirullah (3×), Allahumma antas-salam wa minkas-salam...",en:"I seek Allah’s forgiveness (3×). O Allah, You are Peace and from You is peace. Then: SubhanAllah 33, Alhamdulillah 33, Allahu Akbar 34.",src:"Muslim 591"},
+  {icon:"🍽️",name:"Before Eating",ar:"بِسْمِ اللَّهِ",tr:"Bismillah.",en:"In the name of Allah. Shaytan cannot share the meal. If you forget: Bismillahi awwalahu wa akhirahu.",src:"Muslim 2017"},
+  {icon:"☕",name:"After Eating",ar:"الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي",tr:"Alhamdulillahil-ladhi atʻamanī hadha wa razaqanihi min ghayri hawlin minni wa la quwwah.",en:"Praise be to Allah who fed me this and provided it without any power or might from me. Whoever says this: his past sins are forgiven.",src:"Tirmidhi 3458 · Abu Dawud 4023"},
+  {icon:"🚪",name:"Entering Home",ar:"اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ الْمَوْلِجِ",tr:"Allahumma inni asʻaluka khayral-mawlaji wa khayral-makhraji...",en:"O Allah I ask You for the best entering and the best leaving. In the name of Allah we enter, in Allah’s name we leave, and upon Allah we rely.",src:"Abu Dawud 5096"},
+  {icon:"🚶",name:"Leaving Home",ar:"بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ",tr:"Bismillahi, tawakkaltu ʻalallahi, la hawla wala quwwata illa billah.",en:"In the name of Allah, I rely upon Allah. There is no might nor power except with Allah. A caller says: ‘You are guided, sufficed, and protected.’",src:"Tirmidhi 3426 · Abu Dawud 5095"},
+  {icon:"🕌",name:"Entering Masjid",ar:"اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ",tr:"Allahummʼaf-tah li abwaba rahmatik.",en:"O Allah, open the gates of Your mercy for me. Say this upon entering the masjid — also send salawat on the Prophet ﷺ first.",src:"Muslim 713"},
+  {icon:"🏡",name:"Leaving Masjid",ar:"اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ",tr:"Allahumma inni asʻaluka min fadlik.",en:"O Allah, I ask You of Your bounty. Say when leaving the masjid — stepping with left foot first.",src:"Muslim 713"},
+  {icon:"😴",name:"Before Sleep",ar:"بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",tr:"Bismika Allahumma amutu wa ahya.",en:"In Your name O Allah I die and I live. Then recite Ayat al-Kursi: a guardian is appointed until morning and Shaytan cannot approach.",src:"Bukhari 6324 · Bukhari 3275"},
+  {icon:"🌙",name:"Waking at Night",ar:"لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ",tr:"La ilaha illallahu wahdahu la sharika lah, lahul mulku wa lahul hamdu wa huwa ʻala kulli shayʻin qadir. SubhanAllahi wal hamdulillahi wa la ilaha illallahu wallahu akbar...",en:"Waking at night dua — whoever says this and then prays 2 rakaat, his supplication will be answered.",src:"Bukhari 1154"},
+  {icon:"🚗",name:"Traveling (Vehicle)",ar:"سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَٰذَا",tr:"SubHanal-ladhi sakhkhara lana hadha wa ma kunna lahu muqrinin, wa inna ila Rabbina lamunqalibun.",en:"Glory be to He who subjected this to us; we could not have subdued it. And to our Lord we will return.",src:"Quran 43:13-14 · Abu Dawud 2602"},
+  {icon:"⛈️",name:"Hearing Thunder",ar:"سُبْحَانَ الَّذِي يُسَبِّحُ الرَّعْدُ بِحَمْدِهِ",tr:"Subhanal-ladhi yusabbihuʼr-raʻdu bihamdihi wal-malaʻikatu min khifatih.",en:"Glory be to the One whom the thunder glorifies with praise, and the angels in awe of Him.",src:"Muwatta Imam Malik"},
+  {icon:"🌧️",name:"Seeing New Moon",ar:"اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْأَمْنِ وَالْإِيمَانِ",tr:"Allahumma ahillahu ʻaalayna bil-amni wal-iman was-salamati wal-Islam. Rabbi wa Rabbukallah.",en:"O Allah, let the crescent rise on us with security, faith, safety and Islam. My Lord and your Lord is Allah.",src:"Tirmidhi 3451 · Ahmad"},
+  {icon:"👦👧",name:"Protecting Children",ar:"أُعِيذُكُمَا بِكَلِمَاتِ اللَّهِ التَّامَّةِ",tr:"Uʻidhu-kuma bikalimatiʼlahiʼt-tammati min kulli shaytanin wa hammatin wa min kulli ʻayni lammah.",en:"I seek protection for you in the perfect words of Allah from every devil, every pest, and every evil eye. Ibrahim said this for his sons.",src:"Bukhari 3371"},
+  {icon:"😡",name:"When Angry",ar:"أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",tr:"Aʻdhu billahi minash-shaytanir-rajim.",en:"I seek refuge with Allah from the accursed Shaytan. If you are standing, sit. If sitting, lie down. Also make wudu — anger is from fire, water extinguishes fire.",src:"Bukhari 3282 · Abu Dawud 4784"},
+  {icon:"🤧",name:"When Sneezing",ar:"الْحَمْدُ لِلَّهِ",tr:"Alhamdulillah. Reply to others: YarHamukAllah. They respond: YaHdikumullahu wa yuslihu balakum.",en:"When you sneeze say: Alhamdulillah. Others say: YarHamukAllah (May Allah have mercy on you). You respond: YaHdikumullah.",src:"Bukhari 6224"},
+  {icon:"🏥",name:"Visiting the Sick",ar:"لَا بَأْسَ طَهُورٌ إِنْ شَاءَ اللَّهُ",tr:"La baʼs, tahurun inshaʻAllah.",en:"No harm, a purification inshaʻAllah. Then: Ashhadu an la ilaha illallahu... Astaghfiruka wa atubu ilayk. Whoever visits a sick person remains in a garden of Paradise until he returns.",src:"Bukhari 5656 · Muslim 2568"},
+  {icon:"🩦",name:"At the Graveyard",ar:"السَّلَامُ عَلَيْكُمْ أَهْلَ الدِّيَارِ",tr:"As-salamu ʻalaykum ahlaʼʼd-diyar minal-muʻminin wal-muslimin, wa inna inshaʻAllahu bikum lahiqun...",en:"Peace be upon you, O dwellers of this abode, from among the believers and Muslims. And we shall, Allah willing, join you.",src:"Muslim 975"},
+  {icon:"😔",name:"In Worry/Stress",ar:"لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ",tr:"La ilaha illa anta subhanaka inni kuntu minaz-zalimin.",en:"Dua of Yunus in the whale. The Prophet ﷺ said: no Muslim who is in distress and says this will be answered except that Allah relieves him.",src:"Tirmidhi 3505"},
+  {icon:"📱",name:"After Wudu",ar:"أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ",tr:"Ashhadu an la ilaha illallahu wahdahu la sharika lahu, wa ashhadu anna Muhammadan ʻabduhu wa rasuluh. Allahummaʼjʼalni minat-tawwabina...",en:"Whoever says this after wudu: the 8 gates of Jannah are opened for him to enter from whichever he wishes.",src:"Muslim 234"},
+  {icon:"🏕️",name:"Before Intimacy",ar:"اللَّهُمَّ جَنِّبْنَا الشَّيْطَانَ",tr:"Bismillah. Allahumma jannibnaʼsh-shaytana, wa jannibish-shaytana ma razaqtana.",en:"In the name of Allah. O Allah, keep Shaytan away from us and away from what You will bless us with. Any child from this will never be harmed by Shaytan.",src:"Bukhari 3271"}
+];
+
+(function(){
+  const grid = document.getElementById('ls-grid');
+  if(!grid) return;
+  grid.innerHTML = LIFESTYLE.map((a,i) => `<div class="ls-card" onclick="showLsDetail(${i})">
+    <div class="ls-icon">${a.icon}</div>
+    <div class="ls-name">${a.name}</div>
+  </div>`).join('');
+})();
+function showLsDetail(i){
+  const a = LIFESTYLE[i];
+  document.querySelectorAll('.ls-card').forEach((c,j)=>c.classList.toggle('sel',j===i));
+  const d = document.getElementById('ls-detail');
+  document.getElementById('ls-dtitle').textContent = a.icon+' '+a.name;
+  document.getElementById('ls-dar').textContent = a.ar || '';
+  document.getElementById('ls-dar').style.display = a.ar ? '' : 'none';
+  document.getElementById('ls-dtr').textContent = a.tr || '';
+  document.getElementById('ls-dtr').style.display = a.tr ? '' : 'none';
+  document.getElementById('ls-den').textContent = a.en;
+  document.getElementById('ls-dsrc').textContent = a.src;
+  d.classList.add('show');
+  d.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function closeLsDetail(){
+  document.getElementById('ls-detail').classList.remove('show');
+  document.querySelectorAll('.ls-card').forEach(c=>c.classList.remove('sel'));
+}
+
+// ════════════════════════════════════════════
+// ALL 114 SURAHS
+// ════════════════════════════════════════════
+const SURAH_META = [
+  [1,"Al-Fatiha","الفَاتِحَة","The Opening",7,"Makki",true],
+  [2,"Al-Baqarah","البَقَرَة","The Cow",286,"Madani",true],
+  [3,"Ali 'Imran","آل عِمْرَان","Family of Imran",200,"Madani",false],
+  [4,"An-Nisa'","النِّسَاء","The Women",176,"Madani",false],
+  [5,"Al-Ma'idah","المَائِدَة","The Table",120,"Madani",false],
+  [6,"Al-An'am","الأَنْعَام","The Cattle",165,"Makki",false],
+  [7,"Al-A'raf","الأَعْرَاف","The Heights",206,"Makki",false],
+  [8,"Al-Anfal","الأَنْفَال","The Spoils of War",75,"Madani",false],
+  [9,"At-Tawbah","التَّوْبَة","The Repentance",129,"Madani",false],
+  [10,"Yunus","يُونُس","Jonah",109,"Makki",false],
+  [11,"Hud","هُود","Hud",123,"Makki",false],
+  [12,"Yusuf","يُوسُف","Joseph",111,"Makki",false],
+  [13,"Ar-Ra'd","الرَّعْد","The Thunder",43,"Madani",false],
+  [14,"Ibrahim","إِبْرَاهِيم","Abraham",52,"Makki",false],
+  [15,"Al-Hijr","الحِجْر","The Rocky Tract",99,"Makki",false],
+  [16,"An-Nahl","النَّحْل","The Bee",128,"Makki",false],
+  [17,"Al-Isra'","الإِسْرَاء","The Night Journey",111,"Makki",false],
+  [18,"Al-Kahf","الكَهْف","The Cave",110,"Makki",false],
+  [19,"Maryam","مَرْيَم","Mary",98,"Makki",false],
+  [20,"Ta-Ha","طـه","Ta-Ha",135,"Makki",false],
+  [21,"Al-Anbiya'","الأَنْبِيَاء","The Prophets",112,"Makki",false],
+  [22,"Al-Hajj","الحَجّ","The Pilgrimage",78,"Madani",false],
+  [23,"Al-Mu'minun","المُؤْمِنُون","The Believers",118,"Makki",false],
+  [24,"An-Nur","النُّور","The Light",64,"Madani",false],
+  [25,"Al-Furqan","الفُرْقَان","The Criterion",77,"Makki",false],
+  [26,"Ash-Shu'ara'","الشُّعَرَاء","The Poets",227,"Makki",false],
+  [27,"An-Naml","النَّمْل","The Ant",93,"Makki",false],
+  [28,"Al-Qasas","القَصَص","The Stories",88,"Makki",false],
+  [29,"Al-'Ankabut","العَنْكَبُوت","The Spider",69,"Makki",false],
+  [30,"Ar-Rum","الرُّوم","The Romans",60,"Makki",false],
+  [31,"Luqman","لُقْمَان","Luqman",34,"Makki",false],
+  [32,"As-Sajdah","السَّجْدَة","The Prostration",30,"Makki",false],
+  [33,"Al-Ahzab","الأَحْزَاب","The Combined Forces",73,"Madani",false],
+  [34,"Saba'","سَبَأ","Sheba",54,"Makki",false],
+  [35,"Fatir","فَاطِر","The Originator",45,"Makki",false],
+  [36,"Ya-Sin","يـس","Ya-Sin",83,"Makki",false],
+  [37,"As-Saffat","الصَّافَّات","Those Ranged in Ranks",182,"Makki",false],
+  [38,"Sad","ص","Sad",88,"Makki",false],
+  [39,"Az-Zumar","الزُمَر","The Groups",75,"Makki",false],
+  [40,"Ghafir","غَافِر","The Forgiver",85,"Makki",false],
+  [41,"Fussilat","فُصِّلَت","Explained in Detail",54,"Makki",false],
+  [42,"Ash-Shura","الشُّورى","The Consultation",53,"Makki",false],
+  [43,"Az-Zukhruf","الزُخْرُف","The Gold Adornments",89,"Makki",false],
+  [44,"Ad-Dukhan","الدُخَان","The Smoke",59,"Makki",false],
+  [45,"Al-Jathiyah","الجَاثِيَة","The Crouching",37,"Makki",false],
+  [46,"Al-Ahqaf","الأَحْقَاف","The Wind-Curved Sandhills",35,"Makki",false],
+  [47,"Muhammad","مُحَمَّد","Muhammad",38,"Madani",false],
+  [48,"Al-Fath","الفَتْح","The Victory",29,"Madani",false],
+  [49,"Al-Hujurat","الحُجُرَات","The Dwellings",18,"Madani",false],
+  [50,"Qaf","ق","Qaf",45,"Makki",false],
+  [51,"Adh-Dhariyat","الذَّارِيَات","The Winnowing Winds",60,"Makki",false],
+  [52,"At-Tur","الطُّور","The Mount",49,"Makki",false],
+  [53,"An-Najm","النَّجْم","The Star",62,"Makki",false],
+  [54,"Al-Qamar","القَمَر","The Moon",55,"Makki",false],
+  [55,"Ar-Rahman","الرَّحْمَان","The Beneficent",78,"Madani",false],
+  [56,"Al-Waqi'ah","الوَاقِعَة","The Inevitable",96,"Makki",false],
+  [57,"Al-Hadid","الحَدِيد","The Iron",29,"Madani",false],
+  [58,"Al-Mujadila","المُجَادِلَة","The Argumentation",22,"Madani",false],
+  [59,"Al-Hashr","الحَشْر","The Exile",24,"Madani",false],
+  [60,"Al-Mumtahanah","المُمْتَحِنَة","She that is to be Examined",13,"Madani",false],
+  [61,"As-Saf","الصَّفّ","The Row",14,"Madani",false],
+  [62,"Al-Jumu'ah","الجُمُعَة","Friday",11,"Madani",false],
+  [63,"Al-Munafiqun","المُنَافِقُون","The Hypocrites",11,"Madani",false],
+  [64,"At-Taghabun","التَّغَابُن","Mutual Disillusion",18,"Madani",false],
+  [65,"At-Talaq","الطَّلَاق","Divorce",12,"Madani",false],
+  [66,"At-Tahrim","التَّحْرِيم","The Prohibition",12,"Madani",false],
+  [67,"Al-Mulk","المُلْك","The Sovereignty",30,"Makki",false],
+  [68,"Al-Qalam","القَلَم","The Pen",52,"Makki",false],
+  [69,"Al-Haqqah","الحَاقَّة","The Inevitable Reality",52,"Makki",false],
+  [70,"Al-Ma'arij","المَعَارِج","The Ascending Stairways",44,"Makki",false],
+  [71,"Nuh","نُوح","Noah",28,"Makki",false],
+  [72,"Al-Jinn","الجِنّ","The Jinn",28,"Makki",false],
+  [73,"Al-Muzzammil","المُزَّمِّل","The Enshrouded One",20,"Makki",false],
+  [74,"Al-Muddaththir","المُدَّثِّر","The Cloaked One",56,"Makki",false],
+  [75,"Al-Qiyamah","القِيَامَة","The Resurrection",40,"Makki",false],
+  [76,"Al-Insan","الإِنْسَان","The Human",31,"Madani",false],
+  [77,"Al-Mursalat","المُرْسَلَات","The Emissaries",50,"Makki",false],
+  [78,"An-Naba'","النَّبَأ","The Tidings",40,"Makki",false],
+  [79,"An-Nazi'at","النَّازِعَات","Those Who Drag Forth",46,"Makki",false],
+  [80,"'Abasa","عَبَس","He Frowned",42,"Makki",false],
+  [81,"At-Takwir","التَّكْوِير","The Overthrowing",29,"Makki",false],
+  [82,"Al-Infitar","الإِنْفِطَار","The Cleaving",19,"Makki",false],
+  [83,"Al-Mutaffifin","المُطَفِّفِين","The Defrauding",36,"Makki",false],
+  [84,"Al-Inshiqaq","الإِنْشِقَاق","The Splitting Open",25,"Makki",false],
+  [85,"Al-Buruj","البُرُوج","The Mansions of the Stars",22,"Makki",false],
+  [86,"At-Tariq","الطَّارِق","The Nightcomer",17,"Makki",false],
+  [87,"Al-A'la","الأَعْلى","The Most High",19,"Makki",false],
+  [88,"Al-Ghashiyah","الغَاشِيَة","The Overwhelming",26,"Makki",false],
+  [89,"Al-Fajr","الفَجْر","The Dawn",30,"Makki",false],
+  [90,"Al-Balad","البَلَد","The City",20,"Makki",false],
+  [91,"Ash-Shams","الشَّمْس","The Sun",15,"Makki",false],
+  [92,"Al-Layl","اللَّيْل","The Night",21,"Makki",false],
+  [93,"Ad-Duha","الضُّحى","The Morning Hours",11,"Makki",false],
+  [94,"Ash-Sharh","الشَّرْح","The Relief",8,"Makki",false],
+  [95,"At-Tin","التِّين","The Fig",8,"Makki",false],
+  [96,"Al-'Alaq","العَلَق","The Clinging Clot",19,"Makki",false],
+  [97,"Al-Qadr","القَدْر","The Power",5,"Makki",false],
+  [98,"Al-Bayyinah","البَيِّنَة","The Clear Proof",8,"Madani",false],
+  [99,"Az-Zalzalah","الزَّلْزَلَة","The Earthquake",8,"Madani",false],
+  [100,"Al-'Adiyat","العَادِيَات","The Chargers",11,"Makki",false],
+  [101,"Al-Qari'ah","القَارِعَة","The Striking Hour",11,"Makki",false],
+  [102,"At-Takathur","التَّكَاثُر","The Rivalry in World Increase",8,"Makki",false],
+  [103,"Al-'Asr","العَصْر","The Declining Day",3,"Makki",false],
+  [104,"Al-Humazah","الهُمَزَة","The Traducer",9,"Makki",false],
+  [105,"Al-Fil","الفِيل","The Elephant",5,"Makki",false],
+  [106,"Quraysh","قُرَيْش","Quraysh",4,"Makki",false],
+  [107,"Al-Ma'un","المَاعُون","The Small Kindnesses",7,"Makki",false],
+  [108,"Al-Kawthar","الكَوْثَر","The Abundance",3,"Makki",false],
+  [109,"Al-Kafirun","الكَافِرُون","The Disbelievers",6,"Makki",false],
+  [110,"An-Nasr","النَّصْر","The Divine Support",3,"Madani",false],
+  [111,"Al-Masad","المَسَد","The Palm Fiber",5,"Makki",false],
+  [112,"Al-Ikhlas","الإِخْلَاص","The Sincerity",4,"Makki",true],
+  [113,"Al-Falaq","الفَلَق","The Daybreak",5,"Makki",true],
+  [114,"An-Nas","النَّاس","Mankind",6,"Makki",true]
+];
+
+// Cumulative verse start IDs for Islamic Network CDN audio
+const SURAH_STARTS = (()=>{
+  const s=[0,1];
+  for(let i=1;i<SURAH_META.length;i++) s.push(s[i]+SURAH_META[i-1][4]);
+  return s;
+})();
+
+let surahTypeFilter = 'all';
+let surahSearchQ = '';
+
+function renderSurahList(){
+  const list = document.getElementById('surah-list');
+  const countEl = document.getElementById('surah-count');
+  if(!list) return;
+  const matches = SURAH_META.filter(s => {
+    const [n,en,ar,tr,a,type,isRuq] = s;
+    const mt = surahTypeFilter==='all' || surahTypeFilter===type || (surahTypeFilter==='ruqyah'&&isRuq);
+    const mq = !surahSearchQ || en.toLowerCase().includes(surahSearchQ) || String(n).includes(surahSearchQ) || tr.toLowerCase().includes(surahSearchQ);
+    return mt && mq;
+  });
+  if(countEl) countEl.textContent = matches.length + ' surah' + (matches.length!==1?'s':'');
+  list.innerHTML = matches.map(s => {
+    const [n,en,ar,tr,a,type,isRuq] = s;
+    return `<button class="surah-row-btn" onclick="openSurah(${n})" style="${isRuq?'border-color:var(--accent);':'' }">
+      <div class="surah-num-badge" style="${isRuq?'background:var(--accent);':''}">${n}</div>
+      <div><div class="surah-name-en">${en}${isRuq?' ⭐':''}</div><div class="surah-meta-txt">${a} ayahs · ${type}</div></div>
+      <div class="surah-name-ar-sm">${ar}</div>
+    </button>`;
+  }).join('');
+}
+
+function setSurahType(btn){
+  document.querySelectorAll('.cat-btn[data-stype]').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  surahTypeFilter = btn.dataset.stype;
+  renderSurahList();
+}
+function filterSurahs(){
+  surahSearchQ = (document.getElementById('surah-search')?.value || '').toLowerCase();
+  renderSurahList();
+}
+
+function openSurah(n){
+  const s = SURAH_META[n-1];
+  const [num,en,ar,tr,ayahs,type,isRuq] = s;
+  document.getElementById('surah-list').style.display='none';
+  document.getElementById('surah-view').style.display='block';
+  document.querySelector('.cat-row').style.display='none';
+  document.querySelector('.surah-search-row,#surah-search')&&(document.getElementById('surah-search').parentElement.style.display='none');
+  document.querySelectorAll('.cat-btn[data-stype]').forEach(b=>b.parentElement.style.display='none');
+  document.getElementById('surah-count').style.display='none';
+  const content = document.getElementById('surah-view-content');
+  content.innerHTML = `<div class="surah-loading">Loading ${en}…</div>`;
+  // Pre-cached surahs (already in SURAHS for Ruqyah tab)
+  if(window.SURAHS){
+    const keyMap = {1:'fatiha',112:'ikhlas',113:'falaq',114:'nas'};
+    const rk = keyMap[num];
+    if(rk && window.SURAHS[rk]){
+      renderPreCachedSurah(window.SURAHS[rk], num, en, ar, tr, ayahs, type);
+      return;
+    }
+  }
+  // Fetch from Quran API
+  fetch(`https://api.alquran.cloud/v1/surah/${num}/editions/quran-uthmani,en.sahih`)
+    .then(r=>r.json())
+    .then(data=>{
+      if(!data.data || data.data.length<2){ throw new Error('No data'); }
+      const arData = data.data[0].ayahs;
+      const enData = data.data[1].ayahs;
+      const start = SURAH_STARTS[num-1]+1;
+      let html = `<div style="text-align:right;direction:rtl;font-family:'Noto Naskh Arabic',serif;font-size:1.3rem;margin-bottom:6px;color:var(--muted)">${ar}</div>
+        <div style="font-size:.8rem;color:var(--muted);margin-bottom:20px">${en} · ${ayahs} ayahs · ${type}${isRuq?' · ⭐ Ruqyah surah':''}</div>`;
+      arData.forEach((av,i) => {
+        const ev = enData[i];
+        const vid = start+i-1;
+        html += `<div class="ayah-block" style="margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)">
+          <div class="ayah-num">${num}:${av.numberInSurah}</div>
+          <div class="arabic" style="font-size:1.4rem;line-height:2">${av.text}</div>
+          <div class="meaning" style="margin-top:6px">${ev.text}</div>
+          <audio controls style="width:100%;margin-top:8px" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/${vid}.mp3"></audio>
+        </div>`;
+      });
+      content.innerHTML = html;
+    })
+    .catch(()=>{
+      content.innerHTML = `<div class="surah-error">Could not load surah. Please check your internet connection and try again.</div>`;
+    });
+}
+
+function renderPreCachedSurah(S, num, en, ar, tr, ayahs, type){
+  const content = document.getElementById('surah-view-content');
+  let html = `<div style="text-align:right;direction:rtl;font-family:'Noto Naskh Arabic',serif;font-size:1.3rem;margin-bottom:6px;color:var(--muted)">${ar}</div>
+    <div style="font-size:.8rem;color:var(--muted);margin-bottom:20px">${en} · ${ayahs} ayahs · ${type} · ⭐ Ruqyah surah</div>`;
+  S.ayahs.forEach(a => {
+    html += `<div class="ayah-block" style="margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)">
+      <div class="ayah-num">${a.ref}</div>
+      <div class="arabic" style="font-size:1.4rem;line-height:2">${a.ar}</div>
+      <div class="translit" style="color:var(--muted);font-size:.8rem;margin-top:4px">${a.tr}</div>
+      <div class="meaning" style="margin-top:4px">${a.en}</div>
+      <audio controls style="width:100%;margin-top:8px" src="${a.audio}"></audio>
+    </div>`;
+  });
+  content.innerHTML = html;
+}
+
+function closeSurahView(){
+  document.getElementById('surah-list').style.display='';
+  document.getElementById('surah-view').style.display='none';
+  const cats = document.querySelector('.cat-row');
+  if(cats) cats.style.display='';
+  const cnt = document.getElementById('surah-count');
+  if(cnt) cnt.style.display='';
+  const srch = document.getElementById('surah-search');
+  if(srch && srch.parentElement) srch.parentElement.style.display='';
+}
+
+// Init surah list on load
+setTimeout(renderSurahList, 150);
+
+// ═══════════════ SIGNS DATABASE ═══════════════
+const SIGNS_DB = [
+  // ── EVIL EYE (AYN) ──
+  {cat:'ayn', label:'👁 Evil Eye', text:'Sudden illness or extreme fatigue shortly after being praised, admired, or envied by others.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'Persistent, unexplained headaches — particularly at the top or back of the head — with no medical cause.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'Unexplained crying, anxiety, or heaviness in the chest without an apparent trigger.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'Paleness, yellowish skin tone, or a pervasive feeling of physical heaviness and weakness.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'A sense of being energetically drained after social gatherings where you received praise or attention.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'Blessings — a business, relationship, or project — collapsing suddenly after others became aware of it.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'Sudden reversal of good fortune shortly after it was publicized or celebrated in front of others.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'Loss of appetite, nausea, or digestive discomfort with no dietary or medical explanation.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'Unexplained eye twitching, blurry vision, or eye irritation that appears suddenly.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'A person who admired you suddenly falls ill themselves — indicating they gave ayn unknowingly.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'Feeling extremely hot or cold suddenly after being looked at by someone with envy or admiration.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'A blessed pregnancy, new home, or major life achievement that encounters immediate and unexpected obstacles.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'Hair loss, skin breakouts, or physical changes that began abruptly after social exposure without medical cause.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'Difficulty waking for Fajr or maintaining regular worship that began following a period of public success.'},
+  {cat:'ayn', label:'👁 Evil Eye', text:'A strong desire to be alone, withdrawal from family and social life following praise or attention.'},
+
+  // ── SIHR (BLACK MAGIC) ──
+  {cat:'sihr', label:'🪄 Sihr', text:'Recurring nightmares involving snakes, scorpions, frightening shadowy figures, or falling from heights.'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Sudden, severe aversion toward one\'s spouse without rational cause — sihr at-tafreeq (magic of separation).'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Sharp, stabbing pain in specific body parts — chest, back, or abdomen — with no medical diagnosis.'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Symptoms that intensify at night and near Fajr, then temporarily ease, then return.'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Chronic inability to maintain wudu, or strong aversion and discomfort when attempting to recite Quran.'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Excessive, unexplainable attraction to a specific person that overrides reason and judgment — sihr al-mahabbah (love magic).'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Finding strange objects — tied strings, written papers, hair bundles — inside the home or personal belongings.'},
+  {cat:'sihr', label:'🪄 Sihr', text:'A prolonged illness diagnosed by doctors but not responding to any medical treatment.'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Extreme and sudden mood swings — unusual aggression, deep depression, or emotional numbness.'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Forgetfulness so severe it disrupts daily life — losing words mid-sentence, forgetting simple tasks repeatedly.'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Repeated marital conflict, arguments, and distance that began suddenly without a clear reason.'},
+  {cat:'sihr', label:'🪄 Sihr', text:'A strong, irrational aversion to a specific family member or close person that appeared suddenly.'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Unusual animals — snakes, cats, insects — appearing persistently in or near the home.'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Business failures, legal troubles, or financial collapse beginning suddenly despite good planning.'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Persistent inability to marry despite many efforts and no apparent personal reason — sihr ar-rabt (binding magic).'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Seeing disturbing images, colors, or illusions when eyes are closed, especially before sleep.'},
+  {cat:'sihr', label:'🪄 Sihr', text:'Reaction during Ruqyah recitation: trembling, crying, yawning excessively, or feeling pressure lifting.'},
+
+  // ── JINN POSSESSION / MASS ──
+  {cat:'jinn', label:'🌀 Jinn', text:'Sleep paralysis — waking unable to move the body, sometimes sensing a heavy presence on the chest.'},
+  {cat:'jinn', label:'🌀 Jinn', text:'Hearing whispers, voices, or sensing an unseen presence, especially late at night.'},
+  {cat:'jinn', label:'🌀 Jinn', text:'Sudden loss of consciousness or seizure-like episodes with no neurological diagnosis.'},
+  {cat:'jinn', label:'🌀 Jinn', text:'Speaking in a different voice, using unfamiliar languages, or making sounds during sleep.'},
+  {cat:'jinn', label:'🌀 Jinn', text:'Involuntary body movements — twitching, convulsions, or unusual postures — especially during Quran recitation.'},
+  {cat:'jinn', label:'🌀 Jinn', text:'Intense fear of darkness, being alone, or being in the bathroom — particularly strong and irrational.'},
+  {cat:'jinn', label:'🌀 Jinn', text:'Smelling something sweet, burning, or foul in a room with no physical source.'},
+  {cat:'jinn', label:'🌀 Jinn', text:'Waking at night feeling someone is in the room, seeing shadows or movements in peripheral vision.'},
+  {cat:'jinn', label:'🌀 Jinn', text:'Feeling touched, pushed, or scratched with no visible source — especially during the night.'},
+  {cat:'jinn', label:'🌀 Jinn', text:'Extreme personality change — a calm person becoming violent, or a religious person becoming hostile to Islam.'},
+  {cat:'jinn', label:'🌀 Jinn', text:'Reaction during Ruqyah: the person shouts, cries uncontrollably, or goes limp without choosing to do so.'},
+  {cat:'jinn', label:'🌀 Jinn', text:'Recurrent vivid dreams of being in strange, dark, or unfamiliar places, or dreams of being followed.'},
+  {cat:'jinn', label:'🌀 Jinn', text:'Feeling pressure in the head, shoulders, or back that intensifies when the Quran is played nearby.'},
+
+  // ── WASWAS (WHISPERS) ──
+  {cat:'waswas', label:'💭 Waswas', text:'Intrusive, repetitive doubts about taharah (purity) — washing hands or making wudu excessively despite knowing it is correct.'},
+  {cat:'waswas', label:'💭 Waswas', text:'Constant doubt about whether salah was performed correctly, leading to repeated re-praying.'},
+  {cat:'waswas', label:'💭 Waswas', text:'Intrusive, horrifying thoughts about Allah ﷻ, the Prophet ﷺ, or the religion that the person is deeply distressed by.'},
+  {cat:'waswas', label:'💭 Waswas', text:'Obsessive concern that one\'s iman is broken or that one has committed kufr by thoughts alone.'},
+  {cat:'waswas', label:'💭 Waswas', text:'Feeling unable to recite Quran correctly, hearing whispers that say the recitation is wrong each time.'},
+  {cat:'waswas', label:'💭 Waswas', text:'An overwhelming sense of spiritual dirtiness or unworthiness that persists even after istighfar and wudu.'},
+  {cat:'waswas', label:'💭 Waswas', text:'Intrusive violent or immoral thoughts that contradict the person\'s character and cause them distress.', note:'Note: Waswas thoughts are not sinful as long as the person does not act on or dwell in them. The Prophet ﷺ confirmed this — Sahih Muslim 132.'},
+  {cat:'waswas', label:'💭 Waswas', text:'Obsessive checking — doors, locks, stove — that cannot be stopped despite the person knowing it is excessive.'},
+
+  // ── CHILDREN ──
+  {cat:'children', label:'👶 Children', text:'A child becomes excessively fussy, refuses to feed, or falls ill after being seen and admired by others.'},
+  {cat:'children', label:'👶 Children', text:'A healthy child suddenly stops sleeping through the night, waking with unexplained fear or screaming.'},
+  {cat:'children', label:'👶 Children', text:'A child stops making developmental progress (speech, walking) suddenly with no medical explanation.'},
+  {cat:'children', label:'👶 Children', text:'A baby refuses the breast or bottle immediately after being held or praised by a visitor.'},
+  {cat:'children', label:'👶 Children', text:'A child becomes afraid of a specific room, person, or time of day without being able to explain why.'},
+  {cat:'children', label:'👶 Children', text:'Unexplained rash, skin changes, or fever in a child that appeared after a gathering or outing.'},
+  {cat:'children', label:'👶 Children', text:'Excessive crying at night, an arched back, or repeated nightmares in an otherwise healthy infant or toddler.'},
+
+  // ── RESPONSE / TREATMENT ──
+  {cat:'response', label:'✅ Response', text:'Begin Ruqyah on yourself — recite Al-Fatiha, Ayat al-Kursi, and the Mu\'awwidhatain (113–114) with full presence and intention.'},
+  {cat:'response', label:'✅ Response', text:'Play Surah Al-Baqarah continuously at home for 3 consecutive days. Scholars agree sihr loses effect in a home where it is regularly recited.'},
+  {cat:'response', label:'✅ Response', text:'Make Ma\' Ruqyah (Ruqyah water) — recite Ayat al-Kursi, Al-Falaq, and An-Nas into clean water. Drink daily and wash the body.'},
+  {cat:'response', label:'✅ Response', text:'Treat with Sidr and olive oil — crush seven Sidr leaves into water, recite Ruqyah surahs over it, then wash. Apply recited olive oil to areas of pain.', note:'Ibn Abbas رضي الله عنه: "Use the black seed — it is a cure for everything except death." — Sahih Bukhari 5688'},
+  {cat:'response', label:'✅ Response', text:'Increase tawbah and istighfar — sins create gaps in a believer\'s spiritual armor. Sincere repentance and tawakkul are foundational to healing.'},
+  {cat:'response', label:'✅ Response', text:'Seek a trustworthy Raaqi — one who uses only Quran and Sunnah, performs Ruqyah openly, requires no suspicious rituals, and charges reasonable fees.'},
+  {cat:'response', label:'✅ Response', text:'Strictly avoid fortune tellers, counter-magic, and unauthorized amulets — these are haram and compound the harm. Sahih Muslim 2230.'},
+  {cat:'response', label:'✅ Response', text:'Maintain regular morning and evening adhkar — they are the established prophetic shield. The person who recites them consistently is protected.'},
+  {cat:'response', label:'✅ Response', text:'Pray on time, guard your salah, and increase your recitation of Quran — weakness in worship is the primary opening for spiritual harm.'},
+  {cat:'response', label:'✅ Response', text:'For children with ayn: recite Al-Falaq and An-Nas over them morning and night, blow gently on them, and apply recited olive oil.'},
+];
+
+let signsCat = 'all';
+
+function setSignsCat(btn) {
+  signsCat = btn.dataset.scat;
+  document.querySelectorAll('#signs-cats .cat-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  searchSigns();
+}
+
+function searchSigns() {
+  const q = (document.getElementById('signs-search')?.value || '').toLowerCase().trim();
+  const results = document.getElementById('signs-results');
+  const badge = document.getElementById('signs-count');
+  if (!results) return;
+
+  const filtered = SIGNS_DB.filter(s => {
+    const catOk = signsCat === 'all' || s.cat === signsCat;
+    const qOk = !q || s.text.toLowerCase().includes(q) || s.label.toLowerCase().includes(q) || (s.note||'').toLowerCase().includes(q);
+    return catOk && qOk;
+  });
+
+  if (badge) badge.textContent = filtered.length + ' sign' + (filtered.length !== 1 ? 's' : '');
+
+  if (!filtered.length) {
+    results.innerHTML = '<div class="signs-empty">No signs found. Try a different keyword or category.</div>';
+    return;
+  }
+
+  results.innerHTML = filtered.map(s => `
+    <div class="sign-card">
+      <div class="sign-card-top">
+        <span class="sign-badge ${s.cat}">${s.label}</span>
+        <span class="sign-card-text">${s.text}</span>
+      </div>
+      ${s.note ? `<div class="sign-card-note">${s.note}</div>` : ''}
+    </div>
+  `).join('');
+}
+
+setTimeout(searchSigns, 160);
+
+// Init surah list on load
+setTimeout(renderSurahList, 150);
+
+</script>
+
+</body>
+</html>
